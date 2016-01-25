@@ -1,0 +1,2225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta name="viewport" content="width=1300, initial-scale=1">
+	
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" href="css/desite-C.css" />	
+	
+	<link rel="bookmark icon" href="Just-DE-Black-16px.ico">
+	
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+<script src="js/jquery.zoom.min.js"></script>
+<script src="js/jquery.cycle2.js"></script>
+<script src="js/jquery.textfill.min.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+
+<script>
+// external js: isotope.pkgd.js
+
+$(document).ready( function() {
+  
+  $('.grid').isotope({
+    itemSelector: '.grid-item',
+    masonry: {
+      columnWidth: 200
+    }
+  });
+
+});
+</script>
+
+<script>
+function unloadScrollBars() {
+    document.documentElement.style.overflow = 'hidden';  // firefox, chrome
+    document.body.scroll = "no"; // ie only
+    ScrollBars() {
+    document.documentElement.style.overflow = 'auto';  // firefox, chrome
+    document.body.scroll = "yes"; // ie only
+}
+
+});
+});
+</script>
+<script>
+$(function() {
+    $('.text-fill').textfill({
+        maxFontPixels: 90,
+        
+    });
+});
+</script>
+
+<!--
+<script>
+	                                       //  PARTICLE System - GSAP  //
+	$(document).ready(function(){
+
+  var total = 40 ;
+ var w = $(".particleContainer").width();
+ var h = $(".particleContainer").height();
+ for (i=0; i<total; i++){ 
+ $(".particleContainer").append('<div class="dot"></div>')
+ TweenMax.set($(".dot")[i],{x:Random(w),y:Random(h)+75,opacity:0.25,scale:0.75,force3D:"auto",});
+ animm($(".dot")[i]);
+ } 
+ function animm(elm){ 
+ TweenMax.killTweensOf(elm);
+ TweenMax.to(elm,(Random(30)*3)+10,
+ {bezier:{values:[{x:Random(w*1), y:Random(h*.25)},{x:Random(w*1), y:Random(h*.75)}]},
+  opacity:Random(1)-0.1,
+  scale:((Random(2))*1+0.05),
+  rotation:Random(2160)+1080, 
+  ease: SlowMo.ease.config(0.1, 1.0, false),
+ onComplete:function(){TweenMax.delayedCall(Random(2),animm,[elm])}
+ });
+ };
+ 
+ function Random (max) { return Math.random()*max; }
+
+});
+</script> -->
+
+<script> //Portfolio BackgroundColor swap (Tween)
+$(document).ready(function(){
+	
+var IL_radio = $("#il-folio"),
+	GD_radio = $("#gd-folio"),
+    Port_bg = $("#Portfolio"),
+    IL_menu = $("#IL_menu"),
+    speed = 0.867;
+	
+	IL_radio.click(
+		function() {
+			    TweenMax.to(Port_bg, speed, {backgroundColor: "#343844", height: "2800px", ease: Expo.easeInOut});
+			                                  // #373c48  2a2d38  2f323d  #292d39
+			        IL_menu.toggleClass('active');
+			});
+			
+	GD_radio.click(
+		function() {
+			    TweenMax.to(Port_bg, speed, {backgroundColor: "#f8f6f5", height: "1850px", ease: Expo.easeInOut});
+			    IL_menu.toggleClass('active', false);
+			});	
+			
+});
+</script>
+
+<!-- <script>
+$(document).ready(function(){
+
+   	////Portfolio BackgroundColor swap (TimelineLite)
+var IL_radio = $("#il-folio"),
+    Port_bg = $("#Portfolio"),
+   
+    xspeed = 3.0;
+
+//instantiate  timeline
+var IL_bg_tl = new TimelineLite({paused:true}); //pause default
+
+IL_bg_tl.to(Port_bg, xspeed, {css: {backgroundColor: "#2d2f3a"}, overwrite:"true", ease: Power3.easeInOut}, "label--1") 
+
+	
+// play timeline on click, reverse animation if active
+IL_radio.click(function() {
+    $(this).toggleClass('active');
+
+    if ( $(this).hasClass('active') ) {
+        IL_bg_tl.play(); 
+    }  
+ //   else {
+ //       IL_bg_tl.reverse(); 
+  //  }
+});
+});
+</script> 	-->
+
+
+<!-- HOME BANNER ANIMATION
+	
+<script>
+$(document).ready(function(){
+
+   	//PORT NAV - HOME BANNER Preview Animation
+var banner = $(".GD-Home-Banner"),
+   	gallerylink = $(".GD-hov");    
+
+gallerylink.hover (function() 
+ {
+    banner.toggleClass('active');
+    
+});
+
+});
+</script> 
+<script>
+$(document).ready(function(){
+
+   	//PORT NAV - HOME BANNER Preview Animation
+var banner = $(".IL-Home-Banner"),
+   	gallerylink = $(".IL-hov");    
+
+gallerylink.hover (function() 
+ {
+    banner.toggleClass('active');
+    
+});
+
+});
+</script> 
+<script>
+$(document).ready(function(){
+
+   	//PORT NAV - HOME BANNER Preview Animation
+var banner = $(".MGFX-Home-Banner"),
+   	gallerylink = $(".MGFX-hov");    
+
+gallerylink.hover (function() 
+ {
+    banner.toggleClass('active');
+    
+});
+
+});
+</script> 
+<script>
+$(document).ready(function(){
+
+   	//PORT NAV - HOME BANNER Preview Animation
+var banner = $(".MP-Home-Banner"),
+   	gallerylink = $(".MP-hov");    
+
+gallerylink.hover (function() 
+ {
+    banner.toggleClass('active');
+    
+});
+
+});
+</script> -->
+
+<script type="text/javascript">
+	
+$(document).ready(function(){
+    //FOR Click-Stay-Checked CHECK BOX
+    $("#GD").click(function (e) {
+    var $target = $("#gd-folio"),
+        single_checked = !$target.is("");
+    $target.prop("checked", single_checked);
+    $target.triggerHandler("click");
+    $target.triggerHandler("change");
+
+})
+$("#IL").click(function (e) {
+    var $target = $("#il-folio"),
+        single_checked = !$target.is("");
+    $target.prop("checked", single_checked);
+    $target.triggerHandler("click");
+    $target.triggerHandler("change");
+
+})
+$("#MP").click(function (e) {
+    var $target = $("#mp-folio"),
+        single_checked = !$target.is("");
+    $target.prop("checked", single_checked);
+    $target.triggerHandler("click");
+    $target.triggerHandler("change");
+
+})
+$("#MGFX").click(function (e) {
+    var $target = $("#mgfx-folio"),
+        single_checked = !$target.is("");
+    $target.prop("checked", single_checked);
+    $target.triggerHandler("click");
+    $target.triggerHandler("change");
+
+})
+});
+</script>
+
+<script>
+	$(document).ready(function(){
+  $('#IL-banner').zoom({url: 'img/Illustration-Banner-Gold-1296x4000.jpg',duration:240, magnify:.40, });
+});
+</script>
+
+<script language="JavaScript" type="text/javascript"> //Gallery Zoom GSAP
+$(document).ready(function(){
+	$('.tileImage').hover(
+
+	function() {
+	    TweenMax.to(this, 2, {css: {scaleX: 1.25, scaleY: 1.25},ease: Power1.easeInOut});
+	}, function() {
+	    TweenMax.to(this, 3, {css: {scaleX: 1, scaleY: 1},ease: Power1.easeInOut});
+	});
+});
+</script>
+
+<script type="text/javascript">
+	
+					
+
+			$(function(){
+				
+				var $demoText = $(".float-scroll");
+				
+				//Split the text into characters and wrap every character into span element, then convert the whitespaces to whitespace characters.
+				// $demoText.html( $demoText.html().replace(/./g, "<span>$&</span>").replace(/\s/g, "&nbsp;"));
+				
+				// more info at http://blog.bassta.bg/2013/05/get-page-scrolling-percentage/
+				
+				var $scrollPercentText = $("#scroll-percent");
+				
+				var $window = $(window);
+				var documentHeight = 3200;
+				var windowHeight = $(window).height();
+				var scrollTop = $(window).scrollTop(); 
+				
+				//let's add the animation into TimelineMax
+				var timeline = new TimelineMax({paused:true});
+				
+				timeline.staggerFromTo( $demoText, 2, {opacity:0, transformOrigin:"100% 50%", transformPerspective:300, rotationY:-90, z: 0, marginLeft: 0  }, {opacity:1, rotationY:0, z: 0, marginLeft: 0, ease:Power2.easeOut, },  .6, 3  );
+				
+				
+				$window.on("resize", function(){
+					windowHeight = $(window).height();1
+				}).resize();
+				
+				$(window).on("scroll", function() {
+					
+					scrollTop = $(window).scrollTop();				
+					var scrollPercent = (((scrollTop - windowHeight) - (1000 - windowHeight)) / 1100 ) ; 	
+				
+					//var scrollPercent = ((scrollTop * 1.5) - 2000) / (documentHeight + windowHeight)
+					//Find out more about TimelineMax at http://api.greensock.com/js/com/greensock/TimelineMax.html
+					timeline.progress(scrollPercent).pause() 
+		
+					
+				});				
+				
+			});
+
+		
+</script>
+
+
+<script>
+			$(function(){
+				
+				var $startAnim = $(".nextControl");
+				var $startAnim2 = $(".prevControl");
+				
+				var $demoText = $(".float");
+				
+				//Split the text into characters and wrap every character into span element, then convert the whitespaces to whitespace characters.
+			//*** $demoText.html( $demoText.html().replace(/./g, "<span>$&</span>").replace(/\s/g, "&nbsp;"));
+				
+				//Split the text into words and wrap every word into span element
+				//*** $demoText.html( $demoText.html().replace(/\w+/g, "<span>$&</span>"));
+				
+				
+				$startAnim.on("click", startAnimation);
+				$startAnim2.on("click", startAnimation);
+				
+				function startAnimation(){
+					TweenLite.set($startAnim, {autoAlpha:1});
+						
+					TweenMax.staggerFromTo( $demoText.find("span"), 2, {autoAlpha:0, top:"-100px"}, {autoAlpha:1, top:"0px", ease:Power3.easeInOut}, 0.05, reset );	
+				}
+				
+				function reset(){
+					TweenMax.to($startAnim, 1, {autoAlpha:1});
+				}		
+			});
+</script>	
+			
+<script>
+$(function(){  
+
+var wrapper = $("#DE-Site"),
+    $classlink = $(".smoothscroll");
+
+$classlink.on("click","a", function(){
+    var $this = $(this),
+        href = $this.attr("href"),
+        topY = $(href).offset().top;
+   
+    TweenMax.to($(window), 2.0, {
+        scrollTo:{
+            y: topY, 
+            autoKill: true
+        }, 
+        ease:Power4.easeOut 
+     });
+  
+  return false;
+});  
+  
+});
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+function calculateDistance(elem, mouseX, mouseY) {
+        return Math.sqrt(Math.pow(mouseX - (elem.offset().left+(elem.width()/2)), 2) + Math.pow(mouseY - (elem.offset().top+(elem.height()/2)), 2));
+    }  //Math.floor(  ...) 
+
+var boxes = $(".box"),
+$distance = $('#distance span');
+    
+$("#homebody").mousemove(function(e){
+    $.each(boxes, function(index, el) {
+    	var box = $(el);
+        
+		var boxCenter = [box.offset().left+box.width()/2, box.offset().top+box.height()/2];
+        
+        var angle = Math.atan2(e.pageX- boxCenter[0],- (e.pageY- boxCenter[1]) )*(180/Math.PI);	
+        var proximity = [calculateDistance(box, e.pageX, e.pageY)/400];
+	//	var proximity = Math.floor(Math.sqrt(
+       //         Math.pow(e.pageX - (box.offset().left+box.width()/2)), 2 + 
+             //   Math.pow(e.pageY - (box.offset().top+box.height()/2)), 2));
+
+    //    box.css({ 'transform': 'scale(' + ((proximity*'-1')+1) + ')'});
+   // box.css({ 'transform': 'rotate(' + angle + 'deg)'});
+        
+        TweenLite.to(box, 1.667, {scale:((((proximity*-1)-5.76)/8.8)+1.66), shortRotation: ((angle)+0), transformOrigin:"100% 100%", overwrite:"true", ease:"Power2.easeOut" });
+        // Original Opacity algorhythm , autoAlpha:((((proximity*-1)-33)/44)+0.98), autoAlpha:((((proximity*-1)-15)/25)+0.9),  *new autoAlpha:((((proximity*-1)-36)/54)+0.82),
+       // $distance.text(proximity);
+    });
+});
+
+
+})();
+ 
+
+</script>
+<!-- 
+<script type="text/javascript" > 
+	
+	//CORNERS ROTATE + GSAP 
+	
+	    $(document).ready(function() {var boxes = $(".box");
+
+        $("#homebody").mousemove(function(e){
+            $.each(boxes, function(index, el) {
+                var box = $(el);
+
+                var boxCenter = [box.offset().left+box.width()/2, box.offset().top+box.height()/2];
+
+                var angle = Math.atan2(e.pageX- boxCenter[0],- (e.pageY- boxCenter[1]) )*(180/Math.PI);	    
+
+                
+                TweenLite.to(box, 1.667, {shortRotation: angle, transformOrigin:"50% 50%", overwrite:"true", ease:"Back.easeOut" });
+            });
+        });
+
+        boxes.hover(function() {
+            $(this).toggleClass('active');
+        });
+    });	
+
+</script> -->
+
+<script>
+	//FACEBOOK Share Pop-Up
+    function fbShare(url, title, descr, image, winWidth, winHeight) {
+        var winTop = (screen.height / 2) - (winHeight / 2);
+        var winLeft = (screen.width / 2) - (winWidth / 2);
+        window.open('http://www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[summary]=' + descr + '&p[url]=' + url + '&p[images][0]=' + image, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
+    }
+</script>
+
+<script>
+	//TWITTER Share Pop-Up
+    function twShare(url, title, descr, image, winWidth, winHeight) {
+        var winTop = (screen.height / 2) - (winHeight / 2);
+        var winLeft = (screen.width / 2) - (winWidth / 2);
+        window.open("https://twitter.com/intent/tweet?text=Check%20Out%20www.drewendly.com&url=www.drewendly.com&via=drewendly&original_referer=" + title + '&p[summary]=' + descr + '&p[url]=' + url + '&p[images][0]=' + image, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
+
+        }
+</script>
+
+<script>
+$(document).ready(function(){
+
+   	//Network Hover animation GSAP
+var TW = $("#TW-net"),
+    TW_1 = $(".TW-item"),
+   
+    xspeed = 1.0;
+
+//instantiate  timeline
+var TW_tl = new TimelineLite({paused:true}); //pause default
+
+ TW_tl.to(TW_1, xspeed, {height: 132, autoAlpha:1, ease: Bounce.easeOut}, "label--1") 
+
+// play timeline on click, reverse animation if active
+TW.hover(function() {
+    $(this).toggleClass('active');
+
+    if ( $(this).hasClass('active') ) {
+        TW_tl.play(); 
+    }  
+    else {
+        TW_tl.reverse(); 
+    }
+});
+});
+</script> 	
+<script>
+$(document).ready(function(){
+
+   	//Network Hover animation GSAP
+var IN = $("#IN-net"),
+    IN_1 = $(".IN-item"),
+   
+    xspeed = 1.0;
+
+//instantiate  timeline
+var IN_tl = new TimelineLite({paused:true}); //pause default
+
+ IN_tl.to(IN_1, xspeed, {height: 132, autoAlpha:1, ease: Bounce.easeOut}, "label--1") 
+
+// play timeline on click, reverse animation if active
+IN.hover(function() {
+    $(this).toggleClass('active');
+
+    if ( $(this).hasClass('active') ) {
+        IN_tl.play(); 
+    }  
+    else {
+        IN_tl.reverse(); 
+    }
+});
+});
+</script> 	
+<script>
+$(document).ready(function(){
+
+   	//Network Hover animation GSAP
+var FB = $("#FB-net"),
+    FB_1 = $(".FB-item"),
+   
+    xspeed = 1.0;
+
+//instantiate  timeline
+var FB_tl = new TimelineLite({paused:true}); //pause default
+
+
+ FB_tl.to(FB_1, xspeed, {height: 132, autoAlpha:1, ease: Bounce.easeOut}, "label--1")
+ 
+ 
+
+// play timeline on click, reverse animation if active
+FB.hover(function() {
+    $(this).toggleClass('active');
+
+    if ( $(this).hasClass('active') ) {
+        FB_tl.play(); 
+    }  
+    else {
+        FB_tl.reverse(); 
+    }
+});
+});
+</script> 
+
+<script>
+$(document).ready(function(){
+
+   	//Social Hover animation GSAP
+var VM = $("#ViMeo"),
+    VM_1 = $(".VM-1"),
+    VM_2 = $(".VM-2"),
+    VM_3 = $(".VM-3"),
+    VM_4 = $(".VM-4"),
+    VM_5 = $(".VM-5"),
+    VM_6 = $(".VM-6"),
+    
+    VM_1r = $(".VM-1r"),
+    VM_2r = $(".VM-2r"),
+    VM_3r = $(".VM-3r"),
+    VM_4r = $(".VM-4r"),
+    VM_5r = $(".VM-5r"),
+    VM_6r = $(".VM-6r"),    
+    xspeed = 1.0;
+
+//instantiate  timeline
+var VM_tl = new TimelineLite({paused:true}); //pause default
+
+ VM_tl.to(VM_1, xspeed, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--1") 
+	  .to(VM_2, 	  .7, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.75")
+	  .to(VM_3, 	  .8, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.85")
+	  .to(VM_4, xspeed, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--1") 
+	  .to(VM_5,	  .6, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.75")
+	  .to(VM_6, 	  .6, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.95")
+	  
+	  .to(VM_1r,xspeed, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--1") 
+	  .to(VM_2r, 	  .7, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.75")
+	  .to(VM_3r, 	  .8, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.85")
+	  .to(VM_4r, xspeed, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--1") 
+	  .to(VM_5r,	  .6, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.75")
+	  .to(VM_6r, 	  .6, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.95")  
+//  .to(xmenuitem1,xspeed, {width: 100,height: 300, marginBottom:-313, left:100, autoAlpha:1, ease:Quart.easeInOut}, "label--3") 
+
+// play timeline on click, reverse animation if active
+VM.hover(function() {
+    $(this).toggleClass('active');
+
+    if ( $(this).hasClass('active') ) {
+        VM_tl.play(); 
+    }  
+    else {
+        VM_tl.reverse(); 
+    }
+});
+});
+</script> 	
+
+<script>
+$(document).ready(function(){
+
+   	//Social Hover animation GSAP
+var SC = $("#SoundCloud"),
+    SC_1 = $(".SC-1"),
+    SC_2 = $(".SC-2"),
+    SC_3 = $(".SC-3"),
+    SC_4 = $(".SC-4"),
+    SC_5 = $(".SC-5"),
+    SC_6 = $(".SC-6"),
+    
+    SC_1r = $(".SC-1r"),
+    SC_2r = $(".SC-2r"),
+    SC_3r = $(".SC-3r"),
+    SC_4r = $(".SC-4r"),
+    SC_5r = $(".SC-5r"),
+    SC_6r = $(".SC-6r"),    
+    xspeed = 1.0;
+
+//instantiate  timeline
+var SC_tl = new TimelineLite({paused:true}); //pause default
+
+ SC_tl.to(SC_1, xspeed, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--1") 
+	  .to(SC_2, 	  .7, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.75")
+	  .to(SC_3, 	  .8, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.85")
+	  .to(SC_4, xspeed, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--1") 
+	  .to(SC_5,	  .6, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.75")
+	  .to(SC_6, 	  .6, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.95")
+	  
+	  .to(SC_1r,xspeed, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--1") 
+	  .to(SC_2r, 	  .7, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.75")
+	  .to(SC_3r, 	  .8, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.85")
+	  .to(SC_4r, xspeed, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--1") 
+	  .to(SC_5r,	  .6, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.75")
+	  .to(SC_6r, 	  .6, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.95")  
+//  .to(xmenuitem1,xspeed, {width: 100,height: 300, marginBottom:-313, left:100, autoAlpha:1, ease:Quart.easeInOut}, "label--3") 
+
+// play timeline on click, reverse animation if active
+SC.hover(function() {
+    $(this).toggleClass('active');
+
+    if ( $(this).hasClass('active') ) {
+        SC_tl.play(); 
+    }  
+    else {
+        SC_tl.reverse(); 
+    }
+});
+});
+</script> 	
+<script>
+$(document).ready(function(){
+
+   	//Social Hover animation GSAP
+var CP = $("#CodePen"),
+    CP_1 = $(".CP-1"),
+    CP_2 = $(".CP-2"),
+    CP_3 = $(".CP-3"),
+    CP_4 = $(".CP-4"),
+    CP_5 = $(".CP-5"),
+    CP_6 = $(".CP-6"),
+    
+    CP_1r = $(".CP-1r"),
+    CP_2r = $(".CP-2r"),
+    CP_3r = $(".CP-3r"),
+    CP_4r = $(".CP-4r"),
+    CP_5r = $(".CP-5r"),
+    CP_6r = $(".CP-6r"),    
+    xspeed = 1.0;
+
+//instantiate  timeline
+var CP_tl = new TimelineLite({paused:true}); //pause default
+
+ CP_tl.to(CP_1, xspeed, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--1") 
+	  .to(CP_2, 	  .7, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.75")
+	  .to(CP_3, 	  .8, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.85")
+	  .to(CP_4, xspeed, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--1") 
+	  .to(CP_5,	  .6, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.75")
+	  .to(CP_6, 	  .6, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.95")
+	  
+	  .to(CP_1r,xspeed, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--1") 
+	  .to(CP_2r, 	  .7, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.75")
+	  .to(CP_3r, 	  .8, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.85")
+	  .to(CP_4r, xspeed, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--1") 
+	  .to(CP_5r,	  .6, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.75")
+	  .to(CP_6r, 	  .6, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.95")  
+//  .to(xmenuitem1,xspeed, {width: 100,height: 300, marginBottom:-313, left:100, autoAlpha:1, ease:Quart.easeInOut}, "label--3") 
+
+// play timeline on click, reverse animation if active
+CP.hover(function() {
+    $(this).toggleClass('active');
+
+    if ( $(this).hasClass('active') ) {
+        CP_tl.play(); 
+    }  
+    else {
+        CP_tl.reverse(); 
+    }
+});
+});
+</script> 	
+<script>
+$(document).ready(function(){
+
+   	//Social Hover animation GSAP
+var IG = $("#InstaGram"),
+    IG_1 = $(".IG-1"),
+    IG_2 = $(".IG-2"),
+    IG_3 = $(".IG-3"),
+    IG_4 = $(".IG-4"),
+    IG_5 = $(".IG-5"),
+    IG_6 = $(".IG-6"),
+    
+    IG_1r = $(".IG-1r"),
+    IG_2r = $(".IG-2r"),
+    IG_3r = $(".IG-3r"),
+    IG_4r = $(".IG-4r"),
+    IG_5r = $(".IG-5r"),
+    IG_6r = $(".IG-6r"),    
+    xspeed = 1.0;
+
+//instantiate  timeline
+var IG_tl = new TimelineLite({paused:true}); //pause default
+
+ IG_tl.to(IG_1, xspeed, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--1") 
+	  .to(IG_2, 	  .7, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.75")
+	  .to(IG_3, 	  .8, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.85")
+	  .to(IG_4, xspeed, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--1") 
+	  .to(IG_5,	  .6, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.75")
+	  .to(IG_6, 	  .6, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.95")
+	  
+	  .to(IG_1r,xspeed, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--1") 
+	  .to(IG_2r, 	  .7, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.75")
+	  .to(IG_3r, 	  .8, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.85")
+	  .to(IG_4r, xspeed, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--1") 
+	  .to(IG_5r,	  .6, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.75")
+	  .to(IG_6r, 	  .6, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.95")  
+//  .to(xmenuitem1,xspeed, {width: 100,height: 300, marginBottom:-313, left:100, autoAlpha:1, ease:Quart.easeInOut}, "label--3") 
+
+// play timeline on click, reverse animation if active
+IG.hover(function() {
+    $(this).toggleClass('active');
+
+    if ( $(this).hasClass('active') ) {
+        IG_tl.play(); 
+    }  
+    else {
+        IG_tl.reverse(); 
+    }
+});
+});
+</script> 	
+<script>
+$(document).ready(function(){
+
+   	//Social Hover animation GSAP
+var BH = $("#BeHance"),
+    BH_1 = $(".BH-1"),
+    BH_2 = $(".BH-2"),
+    BH_3 = $(".BH-3"),
+    BH_4 = $(".BH-4"),
+    BH_5 = $(".BH-5"),
+    BH_6 = $(".BH-6"),
+    
+    BH_1r = $(".BH-1r"),
+    BH_2r = $(".BH-2r"),
+    BH_3r = $(".BH-3r"),
+    BH_4r = $(".BH-4r"),
+    BH_5r = $(".BH-5r"),
+    BH_6r = $(".BH-6r"),    
+    xspeed = 1.0;
+
+//instantiate  timeline
+var BH_tl = new TimelineLite({paused:true}); //pause default
+
+ BH_tl.to(BH_1, xspeed, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--1") 
+	  .to(BH_2, 	  .7, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.75")
+	  .to(BH_3, 	  .8, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.85")
+	  .to(BH_4, xspeed, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--1") 
+	  .to(BH_5,	  .6, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.75")
+	  .to(BH_6, 	  .6, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.95")
+	  
+	  .to(BH_1r,xspeed, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--1") 
+	  .to(BH_2r, 	  .7, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.75")
+	  .to(BH_3r, 	  .8, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.85")
+	  .to(BH_4r, xspeed, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--1") 
+	  .to(BH_5r,	  .6, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.75")
+	  .to(BH_6r, 	  .6, {width: 200, autoAlpha:1, ease:Back.easeOut}, "label--2-=.95")  
+//  .to(xmenuitem1,xspeed, {width: 100,height: 300, marginBottom:-313, left:100, autoAlpha:1, ease:Quart.easeInOut}, "label--3") 
+
+// play timeline on click, reverse animation if active
+BH.hover(function() {
+    $(this).toggleClass('active');
+
+    if ( $(this).hasClass('active') ) {
+        BH_tl.play(); 
+    }  
+    else {
+        BH_tl.reverse(); 
+    }
+});
+});
+</script> 	
+
+
+   	<script>
+$(document).ready(function(){
+
+   	//Burger menu animation with greensock / gsap
+var menu = $(".menu"),
+    menuitem1 = $(".menu__item--1"),
+    menuitem2 = $(".menu__item--2"),
+    menuitem3 = $(".menu__item--3"),
+    speed = .4;
+
+//instantiate  timeline
+var tl = new TimelineLite({paused:true}); //pause default
+
+//collapse menu
+tl.to(menuitem1, .4, {top: 0, ease:Quint.easeOut}, "label--1") 
+  .to(menuitem3, .5, {top: 0, ease:Quint.easeOut}, "label--1")
+
+
+  .to(menuitem1, speed, {top: 6, ease:Quart.easeOut}, "label--1")
+  .to(menuitem3, speed, {top: -6, ease:Quint.easeOut}, "label--1")
+  
+  .to(menuitem1, speed, {left: 6, ease:Quart.easeOut}, "label--1")
+  .to(menuitem3, speed, {left: -6, ease:Quint.easeOut}, "label--1")
+  
+  //rotate all items
+  .to(menuitem1, speed, {rotation: 135, scaleY: 1.12318, ease:Quart.easeInOut}, "label--1")
+
+.to(menuitem3, speed, {rotation: -135, scaleY: 1.12318, ease:Quart.easeInOut}, "label--1")
+
+//COLOR
+
+//expand menu
+
+.to(menuitem2, .15, {autoAlpha:0, scaleX: 0.1, ease:Power4.easeIn, }, "label--1") 
+
+  .to(menuitem1, speed, {left: 0, ease:Quart.easeOut}, "label--1")
+  .to(menuitem3, speed, {left: 0, ease:Quint.easeOut}, "label--1")
+  
+  ;
+
+// play timeline on click, reverse animation if active
+menu.click(function() {
+    $(this).toggleClass('active');
+
+    if ( $(this).hasClass('active') ) {
+        tl.play(); 
+    }  
+    else {
+        tl.reverse(); 
+    }
+});
+
+});
+
+
+   	</script> 	
+   	
+   	   
+   	
+   	<script>
+$(document).ready(function(){
+
+   	//SHARE MENU animation with gsap
+var sharemenu = $(".sharemenu"),
+   	sharecontain = $(".sharecontain"),
+    speed = .01;
+
+// Share hover function toggles class .sharemenu.active ~ .shareaside
+
+sharecontain.hover (function() 
+ {
+    sharemenu.toggleClass('active');
+    
+});
+
+});
+  	</script> 	
+   	
+<script>
+$(document).ready(function(){
+
+   	//GDHit+GDaside animation gsap
+var gdaside = $(".GDaside"),
+   	gdhit = $(".GDhit"),
+    speed = .01;
+
+// Share hover function toggles class .sharemenu.active ~ .shareaside
+
+gdhit.hover (function() 
+ {
+    gdaside.toggleClass('active');
+    
+});
+
+});
+  	</script> 	
+	
+   	<script type="text/javascript"> // Fixed Nav Bar Fade In
+$(document).ready(function(){
+  $('.sharemenu a').on('click', function(e) {
+    e.preventDefault();
+  });
+   
+  $(window).on('scroll',function() {
+	  var windowHeight = $(window).height();
+    var scrolltop = $(this).scrollTop();
+ // Nav-In if Scroll-Down
+    if(scrolltop >= windowHeight) {
+      $('#fixedbar').fadeIn(250);
+    }
+     
+    else if(scrolltop <= windowHeight) {
+      $('#fixedbar').fadeOut(250);
+    }
+  });
+});
+
+</script>
+
+   	<script type="text/javascript"> // Start - Down-Arrow Fade-out
+$(document).ready(function(){
+  
+   
+  $(window).on('scroll',function() {
+    var scrolltop = $(this).scrollTop();
+ // Nav-In if Scroll-Down
+    if(scrolltop <= 500) {
+      $('#Down-Link-Home').fadeIn(250);
+    }
+     
+    else if(scrolltop >= 500) {
+      $('#Down-Link-Home').fadeOut(250);
+    }
+  });
+});
+
+</script>
+
+   	<script type="text/javascript"> // About Portrait Fade in
+$(document).ready(function(){
+
+   
+  $(window).on('scroll',function() {
+	  var windowHeight = $(window).height();
+    var scrolltop = $(this).scrollTop();
+ // Nav-In if Scroll-Down
+    if(scrolltop >= (windowHeight + 900)) {
+      $('#portrait').fadeIn(3550);
+    }
+     
+    else if(scrolltop <= (windowHeight + 900)) {
+      $('#portrait').fadeOut(3550);
+    }
+  });
+});
+
+</script>
+
+<script> // About Me - Cycle Scroll //
+		$('#wrapper').cycle({
+    fx:     'scrollHorz',
+    prev:   '#prev',
+    next:   '#next',
+    timeout: 0
+});	
+</script>
+
+<script>
+	
+$(document).ready(function(){
+   
+months = ["January","Febuary","March","April","May","June","July","August","September","October","November","December"];
+days = ["sun","mon","tue","wed","thu","fri","sat"];
+
+timestamp = "multiplier for new Date(timestamp*xxx)";
+var jsDate = new Date();
+
+ $('#date').append('<div id="currentdate">' + [jsDate.getDate()] +"&nbsp"+ months[jsDate.getMonth()] +"&nbsp20" + [jsDate.getYear()-100] +'</div>');
+       
+// <div id="datestring">' + jsDate.toDateString() + '</div>
+});     
+	
+	
+</script>
+
+<script> 
+
+
+function playPause() { 
+    if (myVideo.paused) 
+        myVideo.play(); 
+    else 
+        myVideo.pause(); 
+} 
+
+function makeBig() { 
+    myVideo.width = 560; 
+} 
+
+function makeSmall() { 
+    myVideo.width = 320; 
+} 
+
+function makeNormal() { 
+    myVideo.width = 420; 
+} 
+
+function mute() { 
+	 if (myVideo.muted) 
+        myVideo.muted = false; 
+    else 
+         
+    myVideo.muted = true; 
+} 
+</script> 
+
+
+<title>Drew Endly - Portfolio</title>
+
+	</head>
+
+<body id="DE-Site">
+	
+
+	
+	<section  id="Navigation">
+		
+			
+			<nav id="fixedbar" class="header">
+			  <div id="fixednav">
+			  			<div class="menu" id="burgerNav">
+						  <div class="menu__item--1"></div>
+						  <div class="menu__item--2"></div>
+						  <div class="menu__item--3"></div>
+						</div>
+					<aside class="smoothscroll">
+						<a id="" href="#Start">HOME</a>
+						<a id="" href="#Aboutme">ABOUT ME</a>
+						<a id="" href="#Portfolio">PORTFOLIO</a>
+						<a id="" href="#Social">SOCIAL PLATFORMS</a>
+						<a id="" href="#Getintouch">GET IN TOUCH</a>
+						<a id="" href="#Blog">BLOG</a>
+					</aside>
+			  		<div id="companyNav"><p>DREW &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp   ENDLY</p></div>
+				  		<div class="sharecontain">
+					  		<div id="share"> <p>176 SHARES</p> </div>
+					  		<div id="shareico">  </div>
+					  		<div id="shareicobox" class="sharemenu"></div>
+					  			<div class="shareaside"> 
+						  			<a id="FB" href="javascript:fbShare('http://drewendly.com/', 'Fb Share', 'Facebook share popup', 'http://goo.gl/dS52U', 520, 350)">FACEBOOK<img id="FBico" src="svg/facebook-black.svg" width="25px"></a> </br>
+						  			<a id="TW" href="javascript:twShare('http://drewendly.com/', 'Fb Share', 'Facebook share popup', 'http://goo.gl/dS52U', 520, 350)">TWITTER<img id="TWico" src="svg/twitter-black.svg" width="21px"></a> 
+					  			</div>		
+				  		</div>
+			  </div>
+			</nav>
+	</section>
+  <div id="Start"></div>
+	<section id="Intro">
+		<div id="Down-Link-Home" class="smoothscroll">
+			<a class="Down-Link" href="#Start"></a>
+		</div>
+			
+			<video autoplay id="myVideo">
+			  <source src="vid/Logo-Animate-2A-5-12mbps-DE." type="video/mp4">
+			  Your browser does not support HTML5 video.
+			</video>
+				<br>
+				  <button onclick="playPause()">Play/Pause</button> 
+  <button onclick="makeBig()">Big</button>
+  <button onclick="makeSmall()">Small</button>
+  <button onclick="makeNormal()">Normal</button>
+  <button onclick="mute()">Mute</button>	
+  
+  		<section id="particleBar">
+			<div class="particleContainer"></div>
+		</section>
+  </section>
+	
+	<section id="Home">
+		<div id="homebanner" class="nu">  
+			
+			<div class="GD-Home-Banner"></div>
+			<div class="IL-Home-Banner"></div>
+			<div class="MGFX-Home-Banner"></div>
+			<div class="MP-Home-Banner"></div>
+			
+			<div id="rule1"></div>
+				<div class="date" id="date"><p>ALL RIGHTS RESERVED</p></div>
+			<div id="rule2"></div>
+			<div id="rule3"></div>
+			<img src="svg/Home-Header-1200x285.svg" width="1200px" style="margin-top:-45px">
+		
+
+			
+		</div>
+			<div class="homenav">
+				<ul class="smoothscroll">
+				<li id="link_1"><p>ABOUT ME</p><a style="color: #;" href="#Aboutme" >ABOUT ME</a></li>
+				<li id="link_2"><p>PORTFOLIO</p><a style="color: #;" href="#Portfolio">PORTFOLIO</a></li>
+				<li id="link_3"><p>SOCIAL PLATFORMS</p><a style="color: #;" href="#Social">SOCIAL PLATFORMS</a></li>
+				<li id="link_4"><p>GET IN TOUCH</p><a style="color: #;" href="#Getintouch">GET IN TOUCH</a></li>
+				<li id="link_5"><p>BLOG</p><a style="color: #;" href="#Blog">BLOG</a></li>
+				<div id='navIndicator'></div>
+				</ul>
+		    </div>
+
+			<div id="homebody">
+					
+				<div id="viewPort">	
+					<section id="Bbox">
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						 	<div class="box box-4"></div>
+						<div class="box box-1" style="opacity: 0.35 "></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						 	<div class="box box-4" style="opacity: 0.35 "></div>
+						<div class="box box-1" style="opacity: 0.35 "></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						 	<div class="box box-4"  style="opacity: 0.35 "></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						 	<div class="box box-4"></div>
+						<div class="box box-1" style="opacity: 0.35 "></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"   style="opacity: 0.35 "></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						 	<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						 	<div class="box box-4"></div>
+						 	
+								<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						 	<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						 	<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						 	<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						 	<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						 	<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						 	<div class="box box-4"></div>							 
+						</section>
+				</div>
+						
+				<div id="makeart"> </div>
+			</div>	
+				
+			<div class="portnav">
+				<ul class="smoothscroll">
+				<li><a id="GD" class="GD-hov" href="#Portfolio" >GRAPHIC DESIGN</a></li>
+				<li><a id="IL" class="IL-hov" href="#Portfolio" >ILLUSTRATION</a></li>
+				<li><a id="MGFX" class="MGFX-hov" href="#Portfolio">MOTION GFX</a></li>
+				<li><a id="MP" class="MP-hov" href="#Portfolio">MUSIC PRODUCTION</a></li>
+				</ul>
+			</div>
+			<div class="portexplain DISABLED">
+				 <div class="GDhit GD-hov">					
+					<div id="GDexplain">
+						<img src="svg/page-lift-500x220.png" height="100%" > 
+						<p class="disc-explain"> Simplicity is<br> <span>&nbsp;</span>the ultimate<br><span>&nbsp;&nbsp;</span>sophistication.</p>
+						<h6>Leonardo da Vinci</h6>
+					</div>
+					<div id="GDhov">
+						<p> </p>
+					</div>
+				</div>
+
+				<div class="ILhit IL-hov">
+					<div id="ILexplain">
+						<img src="svg/page-lift-500x220.png" height="100%" >
+						<p class="disc-explain"> Art is either<br> <span>&nbsp;</span>plagiarism<br><span>&nbsp;&nbsp;</span>or revolution.</p>
+						<h6>Paul Gauguin</h6>
+					</div>
+				</div>
+				<div class="MGFXhit MGFX-hov">
+					<div id="MGFXexplain">
+						<img src="svg/page-lift-500x220.png" height="100%" >
+						<p class="disc-explain">Our nature exists<br> <span>&nbsp;</span>in motion; complete<br><span>&nbsp;&nbsp;</span>rest is death.</p>
+						<h6>Blaise Pascal</h6>
+					</div>
+				</div>
+				<div class="MPhit MP-hov">
+					<div id="MPexplain">
+						<img src="svg/page-lift-500x220.png" height="100%" >
+						<p class="disc-explain"> Music is<br> <span>&nbsp;</span>essentially<br><span>&nbsp;&nbsp;</span>movement & voice.</p>
+						<h6>Jon Gooch // Feed Me</h6>
+					</div>
+				</div>
+				<div class="GDaside"> 
+					<div class="GDaside" id="GDfeature">
+						<h1>HURLEY INTERNATIONAL APPAREL <br>____</h1>
+						<p>Two Clothing Lines, 2 Tees, 3 Phantom Boardshorts, 1 Hoodie, 1 Pull-Over Sweatshirt...</p>
+						<h2> CLICK TO GO TO GRAPHIC DESIGN FEATURE <img src="svg/hit-circle.svg"></h2>
+					</div>
+				</div>
+			</div>
+			
+				<div id="pageguide-1">
+					<div id="cap"></div>
+					<ul class="smoothscroll">
+						<li class="onpage"><h1>YOU ARE HERE</h1></li>
+						<li><a href="#Aboutme"><p>ABOUT ME</p></a></li>
+						<li><a href="#Portfolio"><p>PORTFOLIO</p></a></li>
+						<li><a href="#Social"><p>SOCIAL PLATFORMS</p></a></li>
+						<li><a href="#Getintouch"><p>GET IN TOUCH</p></a></li>
+						<li><a href="#Blog"><p>BLOG</p></a></li>
+					</ul>
+				</div>
+
+	</section>
+	
+	<div id="About-Relative-Container">	
+		<section id="Aboutme"> 
+			<div class="cycle-slideshow" 
+		    data-cycle-fx="scrollHorz"
+			data-cycle-timeout=0
+		    data-cycle-pager="#no-template-pager"
+			data-cycle-pager-template=""
+			data-cycle-slides="> div"   
+			data-cycle-prev=".prevControl"
+	        data-cycle-next=".nextControl"
+		    >
+				 <div id="about1" class="about-secs" > 
+					 
+					 <img id="portrait" src="img/04-Portrait-B-Full.jpg" alt="04-Portrait-B-Full" width="0px">
+					 <div id="aboutlogo" ><p>DREW &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp &nbspENDLY</p></div>
+					  <h1 class="float-scroll"> I AM A MULTI-DISCIPLINE<br><p>ARTIST FROM CALIFORNIA</p><hr></h1> 
+					 <h2 class="float-scroll">"My affinity for technology<br>combined with the ability to<br>draw and paint keeps me<br>in a perpetual state of<br>expirementing with my art."<hr></h2>
+					 <h3 class="float-scroll">Modern advances in music synthesis<br>have drawn me towards the craft.<br>One person at a laptop can create<br>brilliant bodies of work with virtually<br>zero limitations. Synapses translate<br>across transistors to shape aspiration<br>into reality.</h3>
+					 <img id="activepager1" src="svg/pager-circle-50active.svg" width=19 height=19>
+					 <img id="portrait-blur" src="img/04-Portrait-B-FullBlur.jpg" alt="04-Portrait-B-FullBlur" width="760px">
+				 </div>
+				 
+				 
+				 <div id="about2" class="about-secs" > 
+					 <img id="activepager2" src="svg/pager-circle-50active.svg" width=19 height=19>
+					 <h1>CONSTRUCTING MY BRAND <hr></h1>
+					 <img id="DEconstruct" src="" alt="04-Portrait-B-Full" width="0px">
+					 <div id="demo-text" class="float"> <span>HELLO First Second Third Fourth</span> <br> 
+										<span> Fifth Sixth Seventh.</span> <br>
+										<span>HELLO First Second Third Fourth</span> <br> 
+										<span> Fifth Sixth Seventh.</span> <br>
+										<span>HELLO First Second Third Fourth</span> <br> 
+										<span> Fifth Sixth Seventh.</span> <br>
+										<span>HELLO First Second Third Fourth</span> <br> 
+										<span> Fifth Sixth Seventh.</span> <br>
+										<span>HELLO First Second Third Fourth</span> <br> 
+										<span> Fifth Sixth Seventh.</span> <br>
+										<span><div id=boxy> CONTACT </div></span>
+					
+				</div>
+	
+					 <p>  </p><img src=""> 
+				 </div>
+				 <div id="about3" class="about-secs float" > 
+					<img id="Insignia" src="svg/about3/glyphs.svg"> 
+					 
+						 <span><h1>"HUMANIQUNESS"</h1></span>
+					  
+					 <span><h3>The ability of abstraction is<br>fundamental to the uniqueness of<br>the human mind. Abstract thoughts<br>allow generalization and symbols<br>such as, language, mathematical<br>
+					notation, and other ways to learn<br>and transmit knowledge.<br><br>As a designer I excercise the ability<br>to convey codefied visuals<br>seamlessly. The art of abstracting<br>creates visual language. When 			 done<br>properly the viewer is able to digest<br>more information with less effort<br>and without confusion. It is visual<br>appeal with ergonomics.<br><br>Design serves a purpose.<br>Effectiveness is paramount.</h3></span>	
+					<span><h2>"It's the power of using symbols that<br>makes men lords of the earth"<br><span style="color:#767676; font-size: 14px;">-Susanne Langer</span></h2></span>
+							 </div>
+				 <div id="about4" class="about-secs" > 
+					 <p> skajdkjbkjbadkb </p><img src=""> 
+				 </div>
+			    
+			   
+			</div>
+			<div id="no-template-pager" class="cycle-pager external">
+			  
+			    <img src="svg/pager-circle-50.svg" width=19 height=19>
+			    <img src="svg/pager-circle-50.svg" width=19 height=19> 
+			    <img src="svg/pager-circle-50.svg" width=19 height=19> 
+			    <img src="svg/pager-circle-50.svg" width=19 height=19>
+			  
+			</div>
+			<div id="about-arrow"> 
+				
+				<div class="prevControl"><span class="prevArrow"></span> </div>
+	        <div class="nextControl"><span class="nextArrow"></span> </div>
+			  </div>
+			<div id="about-arrowbox"> 
+				<span class="prevControl"></span>
+	        <span class="nextControl"></span>
+			  </div>
+		</section>
+	</div>
+
+	
+			  
+		<section id="Portfolio">
+			<div id="pageguide-2">
+				<div id="cap2"></div>
+				<ul class="smoothscroll">
+					<li><a href="#Start"><p>HOME</p></a></li>
+					<li><a href="#Aboutme"><p>ABOUT ME</p></a></li>
+					<li class="onpage2"><h1>PORTFOLIO</h1></li>
+					<li><a href="#Social"><p>SOCIAL PLATFORMS</p></a></li>
+					<li><a href="#Getintouch"><p>GET IN TOUCH</p></a></li>
+					<li><a href="#Blog"><p>BLOG</p></a></li>
+				</ul>
+			</div>
+		
+			
+			
+			<div class="Port-switch">
+			    <div id="Port-body">
+			    
+			       <div class="folio">
+			           <input type="radio" id="gd-folio" class="" name="tab-group-1" checked>
+			           <label for="gd-folio">GRAPHIC DESIGN</label>
+			           
+			           <div class="folio-content GD-content">
+				           <div id="GD-banner" class="port-banner">
+								<img id="bannerDE" src="svg/DE-Diamond-White.svg"></img>
+						   </div>
+						   
+						   <section class="gallery">
+		      <!-- thumbnail image wrapped in a link -->
+							    <section class="item">
+							        <a href="#GDimg1">								        
+							          <div id="GDti-1" class="tileImage"></div>
+							          <div class="item-ex">
+												            <h4>I</h4>
+												            <h3>GRAPHIC ILLUSTRATION</h3>
+								          					<div class='text-fill' ><h1><span>HURLEY</span></h1></div>
+							          						<h2>_</h2>
+							          						<p>Free Diver's<br>Collection<br></p>
+							          </div>
+							        </a>
+							    </section>
+							    <section class="item">
+							        <a href="#GDimg2">								        
+							          <div id="GDti-2" class="tileImage"></div>
+							          <div class="item-ex">
+								          					<h4>II</h4>
+												            <h3>APPAREL DESIGN</h3>
+								          					<div class='text-fill' ><h1><span>HURLEY INT.</span></h1></div>
+							          						<h2>_</h2>
+							          						<p>Free Diver's<br>Collection<br></p>
+							          </div>
+							        </a>
+							    </section>
+							   <section class="item">
+							        <a href="#GDimg3">								        
+							          <div id="GDti-3" class="tileImage"></div>
+							          <div class="item-ex"><h4>III</h4>
+												            <h3>GRAPHIC DESIGN</h3>
+								          					<div class='text-fill' ><h1><span>HURLEY</span></h1></div>
+							          						<h2>_</h2>
+							          						<p>Lines & Tricks<br>Collection<br></p>
+							          </div>
+							        </a>
+							    </section>
+							    <section class="item">
+							        <a href="#GDimg4">								        
+							          <div id="GDti-4" class="tileImage"></div>
+							          <div class="item-ex"><h4>IV</h4>
+												            <h3>APPAREL DESIGN</h3>
+								          					<div class='text-fill' ><h1><span>HURLEY INT.</span></h1></div>
+							          						<h2>_</h2>
+							          						<p>Lines & Tricks<br>Collection<br></p>
+							          </div>
+							        </a>
+							    </section>
+							     <section class="item">
+							        <a href="#GDimg1-2">								        
+							          <div id="GDti-1-2" class="tileImage"></div>
+							          <div class="item-ex"><h4>V</h4>
+												            <h3>GRAPHIC DESIGN</h3>
+								          					<div class='text-fill' ><h1><span>CANNABIS</span></h1></div>
+							          						<h2>_</h2>
+							          						<p>Info-Graphic<br>Poster<br></p>
+							          </div>
+							        </a>
+							    </section>
+							    <section class="item">
+							        <a href="#GDimg2-2">								        
+							          <div id="GDti-2-2" class="tileImage"></div>
+							          <div class="item-ex"><h4>VI</h4>
+												            <h3>GRAPHIC DESIGN</h3>
+								          					<div class='text-fill' ><h1><span>ROYAL BLUE</span></h1></div>
+							          				  		<h2>_</h2>
+							          						<p>Corporate<br>Identity<br></p>
+							          </div>
+							        </a>
+							    </section>
+							   <section class="item">
+							        <a href="#GDimg3-2">
+								        
+							          <div id="GDti-3-2" class="tileImage"></div>
+							          <div class="item-ex"><h4>VII</h4>
+												            <h3>GRAPHIC DESIGN | UI+UX</h3>
+								          					<div class='text-fill' ><h1><span>TUNE DROP</span></h1></div>
+							          						<h2>_</h2>
+							          						<p>Mobile App<br>UI + Branding<br></p>
+							          </div>
+							        </a>
+							    </section>
+							    <section class="item">
+							        <a href="#GDimg4-2">
+								        
+							          <div id="GDti-4-2" class="tileImage"></div>
+							          <div class="item-ex"><h4>VIII</h4>
+												            <h3>3D MODELING</h3>
+								          					<div class='text-fill' ><h1><span>TOPOGRAPHY</span></h1></div>
+							          						<h2>_</h2>
+							          						<p>Cinema4d<br>Personal Work<br></p>
+							          </div>
+							        </a>
+							    </section>
+							     <section class="item">
+							        <a href="#GDimg1-3">								        
+							          <div id="GDti-1-3" class="tileImage"></div>
+							          <div class="item-ex"><h4>IX</h4>
+												            <h3>FRONT-END DEV</h3>
+								          					<div class='text-fill' ><h1><span style="font-size: 41px !important;">EARTH HOUR</span></h1></div>
+							          						<h2>_</h2>
+							          						<p>Web Design<br>HTML + CSS<br></p>
+							          </div>
+							        </a>
+							    </section>
+							    <section class="item">
+							        <a href="#GDimg2-3">								        
+							          <div id="GDti-2-3" class="tileImage"></div>
+							          <div class="item-ex"><h4>X</h4>
+												            <h3>GRAPHIC DESIGN</h3>
+								          					<div class='text-fill' ><h1><span>WAX RECORDS</span></h1></div>
+							          				  		<h2>_</h2>
+							          						<p>Record Label<br>Branding<br></p>
+							          </div>
+							        </a>
+							    </section>
+							   <section class="item">
+							        <a href="#GDimg3-3">
+								        
+							          <div id="GDti-3-3" class="tileImage"></div>
+							          <div class="item-ex"><h4>XI</h4>
+												            <h3>GRAPHIC DESIGN</h3>
+								          					<div class='text-fill' ><h1><span>WAX RECORDS</span></h1></div>
+							          						<h2>_</h2>
+							          						<p>Brochure<br>Print Design<br></p>
+							          </div>
+							        </a>
+							    </section>
+							    <section class="item">
+							        <a href="#GDimg4-3">
+								        
+							          <div id="GDti-4-3" class="tileImage"></div>
+							          <div class="item-ex"><h4>XII</h4>
+												            <h3>3D MODELING + COMPOSITING</h3>
+								          					<div class='text-fill' ><h1><span>APPLE WATCH</span></h1></div>
+							          						<h2>_</h2>
+							          						<p>Cinema4d<br>Personal Work<br></p>
+							          </div>
+							        </a>
+							    </section>
+								 <section class="item">
+							        <a href="#GDimg1-4">								        
+							          <div id="GDti-1-4" class="tileImage"></div>
+							          <div class="item-ex"><h4>XIII</h4>
+												            <h3>GRAPHIC DESIGN</h3>
+								          					<div class='text-fill' ><h1><span>RUSKO</span></h1></div>
+							          						<h2>_</h2>
+							          						<p>Cover Art<br>OWSLA<br></p>
+							          </div>
+							        </a>
+							    </section>
+							    <section class="item">
+							        <a href="#GDimg2-4">								        
+							          <div id="GDti-2-4" class="tileImage"></div>
+							          <div class="item-ex"><h4>XIV</h4>
+												            <h3>GRAPHIC DESIGN</h3>
+								          					<div class='text-fill' ><h1><span>DRUSKEE</span></h1></div>
+							          				  		<h2>_</h2>
+							          						<p>Cover Art<br>Print Design<br></p>
+							          </div>
+							        </a>
+							    </section>
+							   <section class="item">
+							        <a href="#GDimg3-4">
+								        
+							          <div id="GDti-3-4" class="tileImage"></div>
+							          <div class="item-ex"><h4>XV</h4>
+												            <h3>GRAPHIC DESIGN</h3>
+								          					<div class='text-fill' ><h1><span>DRUSKEE</span></h1></div>
+							          						<h2>_</h2>
+							          						<p>Poster<br>Print Design<br></p>
+							          </div>
+							        </a>
+							    </section>
+							    <section class="item">
+							        <a href="#GDimg4-4">
+								        
+							          <div id="GDti-4-4" class="tileImage"></div>
+							          <div class="item-ex"><h4>XVI</h4>
+												            <h3>3D MODELING</h3>
+								          					<div class='text-fill' ><h1><span>THE GRID</span></h1></div>
+							          						<h2>_</h2>
+							          						<p>Cinema4d<br>Personal Work<br></p>
+							          </div>
+							        </a>
+							    </section>
+							</section>														
+			           </div> 
+			       </div>
+			        
+			       <div class="folio">
+			           <input type="radio" id="il-folio" class="empty " name="tab-group-1">
+			           <label for="il-folio">ILLUSTRATION</label>
+			           
+			           <div class="folio-content IL-content">
+				           <div id="IL-banner" class="port-banner">								
+						   </div>
+						
+						  <section class="gallery">
+							  
+							     <div id="IL_menu" class="empty">
+								     
+								     <div id="filters" class="button-group"> 
+									        <h2>[ HIDE MENU ]</h2>
+									         <button id='FilterShowAll' class="button" data-filter=".metal">Show All</button>
+										 <div class="filter-sec">
+											 <h1>Category /<span style="margin-left: -2px; color:rgba(225, 225, 243, 0.75)">/ Type</span></h1>
+											  <button class="button is-checked" data-filter="">Digital Painting</button>
+											  <button class="button" data-filter=".metal">Graphic + Vector</button>
+											  <button class="button" data-filter=".metal">Compositing</button>
+											  <button class="button" data-filter=".metal">Traditional</button>
+											  <button class="button" data-filter=".metal">Observational</button>
+										 </div>		
+										 <div class="filter-sec">
+										 	 <h1>Medium /<span style="margin-left: -2px; color:rgba(225, 225, 243, 0.75)">/ Format</span></h1>
+										 	 <button class="button" data-filter="">Digital</button>
+											  <button class="button" data-filter=".metal">Pen + Ink</button>
+											  <button class="button" data-filter=".metal">Pencil + Graphite</button>
+											  <button class="button" data-filter=".metal">Paint</button>
+											  <button class="button" data-filter=".metal">Mixed</button>
+										 </div>		
+										 <div class="filter-sec">
+										     <h1>Style /<span style="margin-left: -2px; color:rgba(225, 225, 243, 0.75)">/ Genre</span></h1>
+										     <button class="button" data-filter="">B&W</button>
+											  <button class="button" data-filter=".metal">Color</button>
+											  <button class="button" data-filter=".metal">Representational</button>
+											  <button class="button" data-filter=".metal">Abstract</button>
+											  <button class="button" data-filter=".metal">Commercial</button>
+										 		
+										 </div>					  
+									</div>
+								      
+								      <div id="sorts" class="button-group"> 
+									      <h1>Sort /<span style="margin-left: -2px; color:rgba(225, 225, 243, 0.75)">/ Arrange</span></h1>
+									      	  <button class="button is-checked" data-filter="">Most Recent</button>
+											  <button class="button" data-filter=".metal">Featured</button>
+											  <button class="button" data-filter=".metal">Grouping</button>
+								      </div>
+								      
+								 </div>
+							     
+							     <div class="grid">
+									  <div class="grid-item grid-item--wide"></div>
+									  <div class="grid-item grid-item--tall"></div>
+									  <div class="grid-item grid-item--thin"></div>
+									  <div class="grid-item grid-item--thin"></div>
+									  <div class="grid-item grid-item--wide"></div>
+									  <div class="grid-item grid-item--tall"></div>
+									  <div class="grid-item grid-item--wide"></div>
+									  <div class="grid-item "></div>
+									  <div class="grid-item grid-item--tall"></div>
+									  <div class="grid-item grid-item--tall"></div>
+									  <div class="grid-item grid-item--thin"></div>
+									  <div class="grid-item"></div>
+								 </div>
+
+						  </section>	
+				      
+			           </div> 
+			           
+			       </div>
+			        
+			        <div class="folio">
+			           <input type="radio" id="mgfx-folio" name="tab-group-1">
+			           <label for="mgfx-folio">MOTION GFX</label>
+			         
+			           <div class="folio-content">
+			               <p>Stuff for Tab Three MOTION GFX</p>
+			               
+			               <img src="">
+			           </div> 
+			       </div>
+			               
+			           <div class="folio">
+			           <input type="radio" id="mp-folio" name="tab-group-1">
+			           <label for="mp-folio">MUSIC PRODUCTION</label>
+			         
+			           <div class="folio-content">
+			               <p>Stuff for Tab Three MUSIC PRODUCTION</p>
+			               
+			               <img src="">
+			           </div> 
+			       </div>
+			               
+			    </div>
+			</div>			
+				
+				
+			 <!-- thumbnail image wrapped in a link -->
+										
+			<!-- lightbox container hidden with CSS -->
+						<div class="lightbox" id="GDimg1">
+							<a href="#portfolio"><div class="blackout"></div></a>
+						  <div class="box">
+						    <a class="close" href="#portfolio">X</a>
+						   
+						    <div class="content">
+						        <img src="img/gd/OWSLA-Rusko-2_DE.jpg">
+						        <p class="title"></p>
+						        <p class="desc">DESC12-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at volutpat ipsum. Nullam nec posuere ante. Nulla mole</p>
+						    </div>
+						  </div>
+						  
+						</div>   
+						 
+						<div class="lightbox" id="GDimg2">
+							<a href="#portfolio"><div class="blackout"></div></a>
+						  <div class="box">
+						    <a class="close" href="#portfolio">X</a>
+						   
+						    <div class="content">
+						       <img src="img/gd/OWSLA-Rusko-2_DE.jpg">
+						        <p class="title"></p>
+						        <p class="desc">DESC2-Lorem ipsum dolor sit amet, consectetur adipiscing elit.Nullam at volutpat ipsum. Nullam nec posuere ante. Nulla mole</p>
+						    </div>
+						  </div>
+						</div> 
+						 
+						<div class="lightbox" id="GDimg3">
+							<a href="#portfolio"><div class="blackout"></div></a>
+						  <div class="box">
+						    <a class="close" href="#portfolio">X</a>
+						    
+						    <div class="content">
+						        <img src="img/gd/OWSLA-Rusko-2_DE.jpg">
+						        <p class="title"></p>
+						        <p class="desc">DESC3-Lorem ipsum dolor sit amet, consectetur adipiscing elit.Nullam at volutpat ipsum. Nullam nec posuere ante. Nulla mole</p>
+						    </div>
+						  </div>
+						</div>						
+			</div>		
+		</section>
+		
+		<section id="Social">
+			<h1>SOCIAL PLATFORMS</h1><h2></h2>
+			<div id="ViMeo" class="SocialBox">
+			
+				<a href="https://vimeo.com/druskee" target="_blank">
+				<div id="VMAnim" class="SocialAnim">
+					<section>
+					<div  class="VM-1 L-item VM-L"></div>
+					<div class="VM-2 L-item VM-L"></div>
+					<div class="VM-3 L-item VM-L"></div>
+					<div  class="VM-4 L-item VM-L"></div>
+					<div class="VM-5 L-item VM-L"></div>
+					
+					<div class="VM-6 L-item VM-L"></div>
+					<div  class="VM-1 L-item VM-L"></div>		
+					<div class="VM-2 L-item VM-L"></div>
+					<div class="VM-3 L-item VM-L"></div>
+					<div  class="VM-4 L-item VM-L"></div>
+					<div class="VM-2 L-item VM-L"></div>
+					
+					<div class="VM-2r R-item VM-R"></div>
+					<div class="VM-4r R-item VM-R"></div>
+					<div class="VM-6r R-item VM-R"></div>
+					<div  class="VM-4r R-item VM-R"></div>
+					<div class="VM-1r R-item VM-R"></div>
+	
+					<div  class="VM-5r R-item VM-R"></div>
+					<div class="VM-4r R-item VM-R"></div>
+					<div class="VM-6r R-item VM-R"></div>
+					<div  class="VM-1r R-item VM-R"></div>
+					<div class="VM-4r R-item VM-R"></div>
+					<div class="VM-3r R-item VM-R"></div>
+
+					</section> 					 
+				</div>
+				<img src="svg/Social/VM-icon-white.svg"></img>
+				<p>VIMEO</p></a>
+			</div>	
+
+			
+			<div id="SoundCloud" class="SocialBox">
+			
+				<a href="https://soundcloud.com/drewendly" target="_blank">
+				<div id="SCAnim" class="SocialAnim">
+					<section>
+					<div  class="SC-1 L-item SC-L"></div>
+					<div class="SC-2 L-item SC-L"></div>
+					<div class="SC-3 L-item SC-L"></div>
+					<div  class="SC-4 L-item SC-L"></div>
+					<div class="SC-5 L-item SC-L"></div>
+					
+					<div class="SC-6 L-item SC-L"></div>
+					<div  class="SC-1 L-item SC-L"></div>		
+					<div class="SC-2 L-item SC-L"></div>
+					<div class="SC-3 L-item SC-L"></div>
+					<div  class="SC-4 L-item SC-L"></div>
+					<div class="SC-2 L-item SC-L"></div>
+					
+					<div class="SC-2r R-item SC-R"></div>
+					<div class="SC-4r R-item SC-R"></div>
+					<div class="SC-6r R-item SC-R"></div>
+					<div  class="SC-4r R-item SC-R"></div>
+					<div class="SC-1r R-item SC-R"></div>
+	
+					<div  class="SC-5r R-item SC-R"></div>
+					<div class="SC-4r R-item SC-R"></div>
+					<div class="SC-6r R-item SC-R"></div>
+					<div  class="SC-1r R-item SC-R"></div>
+					<div class="SC-4r R-item SC-R"></div>
+					<div class="SC-3r R-item SC-R"></div>
+					
+					<div class="SocialShadow" id="SC_Shadow"> </div>
+					</section> 
+					
+				</div>
+				<img src="svg/Social/SC-icon-white.svg"></img>
+				<p>SOUNDCLOUD</p></a>
+			</div>	
+
+		    <div id="CodePen" class="SocialBox">
+			
+				<a href="http://codepen.io/drewendly/" target="_blank">
+			   <div id="CPAnim" class="SocialAnim">
+				
+					<section>
+					<div  class="CP-1 L-item CP-L"></div>
+					<div class="CP-2 L-item CP-L"></div>
+					<div class="CP-3 L-item CP-L"></div>
+					<div  class="CP-4 L-item CP-L"></div>
+					<div class="CP-5 L-item CP-L"></div>
+					
+					<div class="CP-6 L-item CP-L"></div>
+					<div  class="CP-1 L-item CP-L"></div>		
+					<div class="CP-2 L-item CP-L"></div>
+					<div class="CP-3 L-item CP-L"></div>
+					<div  class="CP-4 L-item CP-L"></div>
+					<div class="CP-2 L-item CP-L"></div>
+					
+					<div class="CP-2r R-item CP-R"></div>
+					<div class="CP-4r R-item CP-R"></div>
+					<div class="CP-6r R-item CP-R"></div>
+					<div  class="CP-4r R-item CP-R"></div>
+					<div class="CP-1r R-item CP-R"></div>
+	
+					<div  class="CP-5r R-item CP-R"></div>
+					<div class="CP-4r R-item CP-R"></div>
+					<div class="CP-6r R-item CP-R"></div>
+					<div  class="CP-1r R-item CP-R"></div>
+					<div class="CP-4r R-item CP-R"></div>
+					<div class="CP-3r R-item CP-R"></div>
+					</section> 
+
+				</div>
+				<img src="svg/Social/CP-icon-white.svg"></img>
+				<p>CODE PEN</p></a>
+			</div>	
+			
+			<div id="InstaGram" class="SocialBox">
+			
+				<a href="http://codepen.io/drewendly/" target="_blank">
+				<div id="IGAnim" class="SocialAnim">
+					<section>
+					<div  class="IG-1 L-item IG-L"></div>
+					<div class="IG-2 L-item IG-L" style="background: #EAD050"></div>
+					<div class="IG-3 L-item IG-L" style="background: #6485B6"></div>
+					<div  class="IG-4 L-item IG-L"></div>
+					<div class="IG-5 L-item IG-L"></div>
+					
+					<div class="IG-6 L-item IG-L"></div>
+					<div  class="IG-1 L-item IG-L"></div>		
+					<div class="IG-2 L-item IG-L"></div>
+					<div class="IG-3 L-item IG-L"></div>
+					<div  class="IG-4 L-item IG-L"></div>
+					<div class="IG-2 L-item IG-L"></div>
+					
+					<div class="IG-2r R-item IG-R"></div>
+					<div class="IG-4r R-item IG-R" style="background: #E9545A"></div>
+					<div class="IG-6r R-item IG-R" style="background: #7AC49C"></div>
+					<div  class="IG-4r R-item IG-R"></div>
+					<div class="IG-1r R-item IG-R"></div>
+	
+					<div  class="IG-5r R-item IG-R"></div>
+					<div class="IG-4r R-item IG-R"></div>
+					<div class="IG-6r R-item IG-R"></div>
+					<div  class="IG-1r R-item IG-R"></div>
+					<div class="IG-4r R-item IG-R"></div>
+					<div class="IG-3r R-item IG-R"></div>
+
+					</section> 					 
+				</div>
+				<img src="svg/Social/IG-icon-white.svg"></img>
+				<p>INSTAGRAM</p></a>
+			</div>	
+			
+			<div id="BeHance" class="SocialBox">
+			
+				<a href="http://codepen.io/drewendly/" target="_blank">
+				<div id="BHAnim" class="SocialAnim">
+					<section>
+					<div  class="BH-1 L-item BH-L"></div>
+					<div class="BH-2 L-item BH-L"></div>
+					<div class="BH-3 L-item BH-L"></div>
+					<div  class="BH-4 L-item BH-L"></div>
+					<div class="BH-5 L-item BH-L"></div>
+					
+					<div class="BH-6 L-item BH-L"></div>
+					<div  class="BH-1 L-item BH-L"></div>		
+					<div class="BH-2 L-item BH-L"></div>
+					<div class="BH-3 L-item BH-L"></div>
+					<div  class="BH-4 L-item BH-L"></div>
+					<div class="BH-2 L-item BH-L"></div>
+					
+					<div class="BH-2r R-item BH-R"></div>
+					<div class="BH-4r R-item BH-R"></div>
+					<div class="BH-6r R-item BH-R"></div>
+					<div  class="BH-4r R-item BH-R"></div>
+					<div class="BH-1r R-item BH-R"></div>
+	
+					<div  class="BH-5r R-item BH-R"></div>
+					<div class="BH-4r R-item BH-R"></div>
+					<div class="BH-6r R-item BH-R"></div>
+					<div  class="BH-1r R-item BH-R"></div>
+					<div class="BH-4r R-item BH-R"></div>
+					<div class="BH-3r R-item BH-R"></div>
+
+					</section> 
+					 
+				</div>
+				<img src="svg/Social/BH-icon-white.svg"></img>
+				<p>BEHANCE</p></a>
+			</div>	
+			
+			<div id="Network">
+				<div class="NetBox" id="TW-net">
+					<a href="">
+						<div class="net-item TW-item"></div>
+					</a>
+				</div>
+				
+				<div class="NetBox" id="IN-net">
+				   <a href="">
+					<div class="net-item IN-item"></div>
+				   </a>
+				</div>
+				
+				<div class="NetBox" id="FB-net">
+				   <a href="">
+					<div class="net-item FB-item"></div>
+				   </a>
+				</div>
+			</div>
+			
+		</section>
+		
+		<section id="Getintouch">
+			
+			
+			
+		</section>
+		
+		
+		<div class="head-button" id="start-anim" style="display: none; visibility: inherit; opacity: 1;">Start animation</div>
+			<div id="demo-text" class="float" style="display: none;">
+				 <span>HELLO First Second Third Fourth</span> <br> 
+				 <span> Fifth Sixth Seventh.</span> <br>							
+			</div>
+				
+</body>
+
+</html>
