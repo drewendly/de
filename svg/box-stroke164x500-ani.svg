@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="500px" height="164px" viewBox="0 0 500 164" style="enable-background:new 0 0 500 164;" xml:space="preserve">
+<style type="text/css">
+
+	.st0{fill:none;stroke:#b3b3b3;stroke-miterlimit:10; stroke-width: .5px;}
+
+	.st0 {
+		
+		
+		
+		-webkit-animation: dash1 4s ease infinite reverse;
+	}
+	
+	@-webkit-keyframes dash1 {
+		
+		
+		
+		 0%{
+			stroke-dasharray: 164, 500;
+			stroke-dashoffset: -500;
+		}
+		
+		50% {
+			stroke-dasharray: 500, 164;
+			stroke-dashoffset: 0;
+		}
+		
+		100%{
+			stroke-dasharray: 164, 500;
+			stroke-dashoffset: 164;
+		}
+		
+		
+		
+	
+<!--		 0%{
+			stroke-dasharray: 164, 500;
+			stroke-dashoffset: -500;
+		}
+		
+		50% {
+			stroke-dasharray: 500, 164;
+			stroke-dashoffset: 0;
+		}
+		
+		100%{
+			stroke-dasharray: 164, 500;
+			stroke-dashoffset: -500;
+		}
+		
+		
+		 0% {
+			stroke-dasharray: 1, 100;
+			stroke-dashoffset: -4500;
+		}
+		
+			 50% {
+			stroke-dasharray: 10, 0;
+			stroke-dashoffset: -664;
+		}
+		 100% {
+			stroke-dasharray: 200, 600, 100, 50;
+			stroke-dashoffset: 0;
+		}
+		
+		
+		
+		 {
+			stroke-dasharray: 1164, 164;
+			stroke-dashoffset: 0;
+		}
+		 {
+			stroke-dasharray: 1164, 164;
+			stroke-dashoffset: 664;
+		}
+		 {
+			stroke-dasharray: 1164, 164;
+			stroke-dashoffset: 1328;
+		} -->
+		
+	}
+	
+		.st1{fill:none;stroke:#000000;stroke-miterlimit:10;}
+
+<!--	.st1 {
+		
+		stroke-dasharray: 200;
+		
+		-webkit-animation: dash2 2s ease infinite;
+		-webkit-animation-delay: dash2 3s;
+		
+	}
+	
+	@-webkit-keyframes dash2 {
+		from {
+			
+			stroke-dashoffset: 0;
+		}
+		to {
+			
+			stroke-dashoffset: 2000;
+		}
+		
+		<rect x="0.5" y="2.5" class="st1" width="497" height="161"/>
+	}-->
+	
+
+</style>
+<rect x="0.5" y="2.5" class="st0" width="497" height="161"/>
+
+</svg>
+
+
+

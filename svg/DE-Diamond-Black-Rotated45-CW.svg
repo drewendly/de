@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="500px"
+	 height="500px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
+<g id="Layer_1" display="none">
+	<g display="inline">
+		<path d="M258.1,343v-84.6h-19.7v65.2l-77-77h65.2V162h11.8v84.6h19.7v-64.9l76.7,76.7h-64.9v56.1l28.4-28.4l8.3,8.3L258.1,343z
+			 M189.9,258.4l36.7,36.7v-36.7H189.9z M269.9,246.6h36.4l-36.4-36.4V246.6z"/>
+	</g>
+	<g display="inline">
+		<path d="M250,495.7L4.3,250L250,4.4L495.7,250L250,495.7z M19.2,250L250,480.8L480.8,250L250,19.2L19.2,250z"/>
+	</g>
+	<g id="Layer_3" display="inline">
+		<rect x="-360" y="640" fill="#F7F7F7" width="1200" height="285"/>
+		
+			<rect x="180.7" y="713.4" transform="matrix(0.7071 0.7071 -0.7071 0.7071 614.1216 57.722)" fill="#F9F9F9" width="113.5" height="113.5"/>
+		<polygon fill="#B7B7B7" points="237.1,852.7 310.7,925 476,925 319.5,769.5 		"/>
+		<polygon fill="#E5E5E5" points="233.4,740.5 242.9,750.1 244.3,754.1 259.6,770.2 242.1,771 241.4,797.5 240,801.2 229.8,791 
+			217.5,774.6 214.1,772.7 231.4,771.1 232.2,743 		"/>
+		<polygon fill="#D8D8D8" points="265.6,772.9 291,798.3 263.4,824.3 240.2,801.1 241.6,789.1 241.6,771 		"/>
+		<polygon fill="#CCCCCC" points="240,801.2 262.3,823.6 278.8,807.4 255.1,783.7 241.9,798.7 		"/>
+	</g>
+	<g id="Layer_2" display="inline">
+		<polyline fill="none" stroke="#3F3F3F" stroke-width="3.9735" stroke-miterlimit="10" points="231.5,740.5 231.5,790.1 212.4,771 
+			250.8,771 261.2,771 242.1,751.9 242.1,796.7 255.1,783.7 		"/>
+		
+			<rect x="180.7" y="713.4" transform="matrix(0.7071 0.7071 -0.7071 0.7071 614.1216 57.722)" fill="none" stroke="#3F3F3F" stroke-width="3.5456" stroke-miterlimit="10" width="113.5" height="113.5"/>
+	</g>
+</g>
+<g id="Layer_2_1_">
+	<g>
+		<path d="M163.5,353.1l86.2-86.2l-20.1-20.1l-66.4,66.4l0-156.9l66.4,66.4l86.2-86.2l12,12l-86.2,86.2l20.1,20.1l66.2-66.2l0,156.4
+			l-66.2-66.2l-57.2,57.2h57.8v17L163.5,353.1z M180.2,197.3l0,74.8l37.4-37.4L180.2,197.3z M273.8,266.9L311,304l0-74.3
+			L273.8,266.9z"/>
+	</g>
+	<g>
+		<path d="M-0.5,500.5l0-500.9l500.9,0l0,500.9L-0.5,500.5z M14.7,14.7l0,470.5l470.5,0l0-470.5L14.7,14.7z"/>
+	</g>
+</g>
+</svg>
