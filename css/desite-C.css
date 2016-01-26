@@ -973,7 +973,7 @@ color picker{
 	top: 284px;
 	left: 3px;
 	height: 51px;
-	width: 1200px;
+	width: 1210px;
 	background-color: ;
 	margin: 0 auto;
 	overflow: visible;
@@ -1017,8 +1017,6 @@ background: rgba(248, 246, 245, 0.0);
  	
 }
 
-
-
 .homenav li a{
 	position: relative;
 	display: inline;
@@ -1047,7 +1045,7 @@ background: rgba(248, 246, 245, 0.0);
 	padding-left: 52px;
 	padding-right: 52px; /* 109px between items */
 	width: inherit;
-	height: 31px;
+	height: 33px;
 	left: 0;
 	top: 0px;
 	position: absolute;
