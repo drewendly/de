@@ -1262,20 +1262,23 @@ height: 100vh;
 	margin: 0 auto;
 	right: 296px;
 	top: -103px;
-	width: 547px;
+	width: 560px;
 	height: 40px;
 	background-color: lime;
 	z-index: 8;
 	  background-color: #f7f6f5;
 }
-
-.portnav ul a{
+.portnav ul li a{
+text-decoration: none;
+}
+.portnav ul li{
+	display: inline block;
+	float: left;
+	text-decoration: none;
 	letter-spacing: 1.333px;
 	font-size: 8pt;
 	font-family:  Helvetica, Tahoma;
 	font-weight: 300;
-	float: left;
-	text-decoration: none;
 	height: 60px;
 	line-height: 14pt;
 	padding-left: 12px;
@@ -1288,16 +1291,31 @@ height: 100vh;
 /*	margin-top: -200px; */
 }
 
-.portnav ul a:hover {
+.portnav ul li:hover {
 	font-size: 8.33pt;
 	line-height: 15pt;
-	font-weight: 300;
 	opacity: .9;
-	letter-spacing: 1.67px;
+	letter-spacing: 2.0px;
 	padding-right: 18px;
 	padding-left: 9px;
 	}
-
+/*	SAFARI Margin+Spacing Fix */
+.portnav ul li:nth-child(1):hover{
+	padding-right: 18px !important;
+	padding-left: 7px !important;
+}
+.portnav ul li:nth-child(2):hover{
+	padding-right: 18px !important;
+	padding-left: 8px !important;
+}
+.portnav ul li:nth-child(3):hover{
+	padding-right: 18px !important;
+	padding-left: 9px !important;
+}
+.portnav ul li:nth-child(4):hover{
+	padding-right: 16px !important;
+	padding-left: 8px !important;
+}
 
 .portnav p{
 	color:blue;
