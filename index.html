@@ -9,6 +9,8 @@
 	
 	<link rel="bookmark icon" href="Just-DE-Black-16px.ico">
 	
+
+
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -19,6 +21,46 @@
 <script src="js/jquery.cycle2.js"></script>
 <script src="js/jquery.textfill.min.js"></script>
 <script src="js/isotope.pkgd.min.js"></script>
+
+<script>
+	$(document).ready( function() {
+		
+		
+	//jQuery time
+	
+var parent, ink, d, x, y,
+	AnchorClick = $(".inkAnchor");
+
+AnchorClick.click(function(e){
+	parent = $(this).parent();
+	
+	//create .ink element if it doesn't exist
+	if(parent.find(".ink").length == 0)
+		parent.prepend("<span class='ink'></span>");
+		
+	ink = parent.find(".ink");
+	//incase of quick double clicks stop the previous animation
+	ink.removeClass("animate");
+	
+	//set size of .ink
+	if(!ink.height() && !ink.width())
+	{
+		//use parent's width or height whichever is larger for the diameter to make a circle which can cover the entire element.
+		d = Math.max(parent.outerWidth(), parent.outerHeight());
+		ink.css({height: d, width: d});
+	}
+	
+	//get click coordinates
+	//logic = click coordinates relative to page - parent's position relative to page - half of self height/width to make it controllable from the center;
+	x = e.pageX - parent.offset().left - ink.width()/2;
+	y = e.pageY - parent.offset().top - ink.height()/2;
+	
+	//set the position and add class .animate
+	ink.css({top: y+'px', left: x+'px'}).addClass("animate");
+})
+});
+
+</script>
 
 <script>
 // external js: isotope.pkgd.js
@@ -1024,12 +1066,14 @@ function mute() {
 						  <div class="menu__item--3"></div>
 						</div>
 					<aside class="smoothscroll">
-						<a id="" href="#Start">HOME</a>
-						<a id="" href="#Aboutme">ABOUT ME</a>
-						<a id="" href="#Portfolio">PORTFOLIO</a>
-						<a id="" href="#Social">SOCIAL PLATFORMS</a>
-						<a id="" href="#Getintouch">GET IN TOUCH</a>
-						<a id="" href="#Blog">BLOG</a>
+						<ul>
+							<li class="inkList"><a id="" class="inkAnchor" href="#Start">HOME</a></li>
+							<li class="inkList"><a id="" class="inkAnchor" href="#Aboutme">ABOUT ME</a></li>
+							<li class="inkList"><a id="" class="inkAnchor" href="#Portfolio">PORTFOLIO</a></li>
+							<li class="inkList"><a id="" class="inkAnchor" href="#Social">SOCIAL PLATFORMS</a></li>
+							<li class="inkList"><a id="" class="inkAnchor" href="#Getintouch">GET IN TOUCH</a></li>
+							<li class="inkList"><a id="" class="inkAnchor" href="#Blog">BLOG</a></li>
+						</ul>
 					</aside>
 			  		<div id="companyNav"><p>DREW &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp   ENDLY</p></div>
 				  		<div class="sharecontain">

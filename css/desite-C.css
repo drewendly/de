@@ -249,26 +249,20 @@ nav {
 	text-align: center;
 }
  
-#fixednav  a {
-  display: block;
-  float: left;
+#fixednav a {
+  display: inline-block;
   font-family: helvetica;
   line-height: 50px;
   text-decoration: none;
   margin-right: 6px; 
 }
-#fixednav a:hover {
-  color: rgba(255, 255, 255, 0.9);
-  background: rgba(0, 0, 0, 0.3);
-  ;
-}
+
 .sharemenu.active  {
   color: #fff;
   height: 50px;
   -webkit-transition-delay: 0s;
   -moz-transition-delay: 0s;
   transition-delay: 0s;
-  
 }
 #companyNav {
 	position: absolute;
@@ -324,12 +318,19 @@ nav {
 /* END hidden fixed navigation */
 
 /* Start Hamburger Nav*/
-
-aside a {
+aside li {
 	position: relative;
 	display: list-item;
-	width: 145px;
+	top: 5px;
 	height: 40px;
+	width: 190px;
+	margin-bottom: 2px;
+}
+
+aside li a {
+	position: relative;
+	display: block;
+	width: 100%;
 	line-height: 41px !important;
 	text-align: -webkit-left !important;
 	font-size: 8pt;
@@ -337,7 +338,6 @@ aside a {
 	letter-spacing: .8pt;
 	color: rgba(171, 157, 105, 1) !important;
 	-webkit-font-smoothing: antialiased;
-	top: 10px;
 	padding-left: 25px !important;
 		-webkit-transition: all 0.5s ease !important;
 	 -moz-transition: all 0.5s ease !important;
@@ -345,13 +345,14 @@ aside a {
 	  pointer-events: all !important;
 }
 
-aside a:hover {
-	overflow: hidden !important;
+aside li a:hover {
 	color:rgba(255, 255, 255,0.9) !important;
 	letter-spacing: 1.2pt;
 }
 
-.menu.active ~ aside a {
+.menu.active ~ aside li {
+	overflow: hidden;
+	background: rgba(134, 134, 134, 0.08);
 	animation: menuLinksIn 0.65s cubic-bezier(1,1.78,.12,.85) forwards 1;
 }
 
@@ -366,26 +367,26 @@ aside a:hover {
   }
 }
 
-.menu.active ~ aside a:nth-child(1){
+.menu.active ~ aside li:nth-child(1){
   animation-delay: 0.0s;
 }
-.menu.active ~ aside a:nth-child(2) {
+.menu.active ~ aside li:nth-child(2) {
   animation-delay: 0.05s;
 }
-.menu.active ~ aside a:nth-child(3) {
+.menu.active ~ aside li:nth-child(3) {
   animation-delay: 0.1s;
 }
-.menu.active ~ aside a:nth-child(4) {
+.menu.active ~ aside li:nth-child(4) {
   animation-delay: 0.15s;
 }
-.menu.active ~ aside a:nth-child(5) {
+.menu.active ~ aside li:nth-child(5) {
   animation-delay: 0.2s;
 }
-.menu.active ~ aside a:nth-child(6) {
+.menu.active ~ aside li:nth-child(6) {
   animation-delay: 0.25s;
 }
 
-.menu ~ aside a {
+.menu ~ aside li {
 	animation: menuLinksOut 0.93s cubic-bezier(.34,-0.36,0,.76) forwards 1;
 }
 
@@ -396,10 +397,42 @@ aside a:hover {
   }
   100% {
     transform: translateY(-100%);
-    
     opacity: 0.0;
   }
 }
+
+/*/\\/   RIPPLE CLICK FX ---Start----   /\/\*/
+
+/*nav styles*/
+
+
+.inkAnchor {
+	display: inline-block; 
+	cursor: pointer; /*since the links are dummy without href values*/
+	/*prevent text selection*/
+	user-select: none;
+	/*static positioned elements appear behind absolutely positioned siblings(.ink in this case) hence we will make the links relatively positioned to bring them above .ink*/
+	position: relative;
+}
+
+/*.ink styles - the elements which will create the ripple effect. The size and position of these elements will be set by the JS code. Initially these elements will be scaled down to 0% and later animated to large fading circles on user click.*/
+.ink {
+	display: block; 
+	position: absolute;
+	background: hsla(0, 0%, 100%, 0.66);
+	border-radius: 50%;
+	transform: scale(0);
+
+}
+/*animation effect*/
+.ink.animate {animation: ripple 2.333s cubic-bezier(.56,1.86,.61,.71);}
+@keyframes ripple {
+	/*scale the element to 250% to safely cover the entire link and fade it out*/
+	100% {opacity: 0; transform: scale(2.5);}
+}
+
+/*\\/\/\   RIPPLE CLICK FX ---End----   \/\/\*/
+
 
 
 .menu__item--1,
@@ -535,6 +568,7 @@ color picker{
 
 .shareaside a:hover {
 	color: rgba(255, 255, 255, 0.9) !important;
+	background: rgba(0, 0, 0, 0.3);
 }
 
 .shareaside a:hover #FBico{
@@ -3298,3 +3332,6 @@ clip-path: polygon(65px 0px, 125px 0px, 125px 110px, 0px 125px);
 body {	
 	overflow: LOCK SCROLL;
 }
+
+
+
