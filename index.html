@@ -387,20 +387,24 @@ $(function(){
 var wrapper = $("#DE-Site"),
     $classlink = $(".smoothscroll");
 
+
 $classlink.on("click","a", function(){
     var $this = $(this),
         href = $this.attr("href"),
         topY = $(href).offset().top;
-   
-    TweenMax.to($(window), 2.0, {
+          
+
+
+    TweenMax.to($(window), 3.333, {
         scrollTo:{
             y: topY, 
             autoKill: true
         }, 
-        ease:Power4.easeOut 
+        ease:Expo.easeOut 
      });
   
   return false;
+    
 });  
   
 });
@@ -838,6 +842,7 @@ var menu = $(".menu"),
     menuitem1 = $(".menu__item--1"),
     menuitem2 = $(".menu__item--2"),
     menuitem3 = $(".menu__item--3"),
+    navList = $(".NavList"),
     speed = .4;
 
 //instantiate  timeline
@@ -880,9 +885,15 @@ menu.click(function() {
     else {
         tl.reverse(); 
     }
-});
+})
 
-});
+// TRYING TO AUTO-CLOSE BurgerNav MENU ! ! ! 
+//	navList.click(function () {
+//	        tl.reverse(); 
+//	$(".menu").toggleClass('active');
+//	});
+	
+	});
 
 
    	</script> 	
@@ -939,6 +950,7 @@ $(document).ready(function(){
  // Nav-In if Scroll-Down
     if(scrolltop >= windowHeight) {
       $('#fixedbar').fadeIn(250);
+      
     }
      
     else if(scrolltop <= windowHeight) {
@@ -948,19 +960,44 @@ $(document).ready(function(){
 });
 
 </script>
+<script type="text/javascript"> // Fixed Nav Bar ELEVATE over HomeBanner
+$(document).ready(function(){
+  $('.sharemenu a').on('click', function(e) {
+    e.preventDefault();
+  });
+   
+  $(window).on('scroll',function() {
+	  var windowHeight = $(window).height();
+    var scrolltop = $(this).scrollTop();
+ // Nav-In if Scroll-Down
+    if(scrolltop >= (windowHeight + 50)) {
+      $('#fixedbar').addClass('elevate');
+    }
+     
+    else if(scrolltop <= (windowHeight + 50)) {
+      $('#fixedbar').removeClass('elevate');
+    }
+
+  });
+});
+
+</script>
+
 
    	<script type="text/javascript"> // Start - Down-Arrow Fade-out
 $(document).ready(function(){
   
    
   $(window).on('scroll',function() {
+	  
     var scrolltop = $(this).scrollTop();
+    
  // Nav-In if Scroll-Down
-    if(scrolltop <= 500) {
+    if(scrolltop <= 200) {
       $('#Down-Link-Home').fadeIn(250);
     }
      
-    else if(scrolltop >= 500) {
+    else if(scrolltop >= 200) {
       $('#Down-Link-Home').fadeOut(250);
     }
   });
@@ -1066,7 +1103,7 @@ function mute() {
 						  <div class="menu__item--3"></div>
 						</div>
 					<aside class="smoothscroll">
-						<ul>
+						<ul class="NavList">
 							<li class="inkList"><a id="" class="inkAnchor" href="#Start">HOME</a></li>
 							<li class="inkList"><a id="" class="inkAnchor" href="#Aboutme">ABOUT ME</a></li>
 							<li class="inkList"><a id="" class="inkAnchor" href="#Portfolio">PORTFOLIO</a></li>
@@ -1140,393 +1177,969 @@ function mute() {
 
 			<div id="homebody">
 					
-				<div id="viewPort">	
+				<div id="viewPort">	 
 					<section id="Bbox">
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						 	<div class="box box-4"></div>
-						<div class="box box-1" style="opacity: 0.35 "></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						 	<div class="box box-4" style="opacity: 0.35 "></div>
-						<div class="box box-1" style="opacity: 0.35 "></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						 	<div class="box box-4"  style="opacity: 0.35 "></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						 	<div class="box box-4"></div>
-						<div class="box box-1" style="opacity: 0.35 "></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"   style="opacity: 0.35 "></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						 	<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						 	<div class="box box-4"></div>
-						 	
-								<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						 	<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						 	<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						 	<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						 	<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						 	<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						<div class="box box-4"></div>
-						<div class="box box-1"></div>
-						<div class="box box-2"></div>
-						<div class="box box-3"></div>
-						 	<div class="box box-4"></div>							 
+						
+						<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+						<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g></svg>
+						
+							 	<svg class="box box-1" style="opacity: 0.35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+						<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" style="opacity: 0.35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g></svg>
+						
+						<svg class="box box-1" style="opacity: 0.35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+						<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" style="opacity: 0.35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g></svg>
+
+						<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+						<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g></svg>
+						
+						<svg class="box box-1" style="opacity: 0.35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+						<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" style="opacity: 0.35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g></svg>
+
+						<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+						<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g></svg>
+						
+						<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+						<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g></svg>
+						
+						<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+						<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g></svg>
+						
+						<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+						<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g></svg>
+						
+						<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+						<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g></svg>
+						
+						<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+						<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g></svg>
+						
+						<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+						<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g>
+</svg>
+<svg class="box box-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="0.6" x2="0" y2="0.6"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="10" x2="0.6" y2="0"/> </g></svg>
+						<svg class="box box-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="10" x2="9.4" y2="0"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="0.6" x2="10" y2="0.6"/> </g></svg>
+						<svg class="box box-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0" y1="9.4" x2="10" y2="9.4"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="9.4" y1="0" x2="9.4" y2="10"/> </g>
+</svg>
+						<svg class="box box-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+	<g> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="0.6" y1="0" x2="0.6" y2="10"/> <line fill="none" stroke="#010101" stroke-width="1.25" stroke-miterlimit="10" x1="10" y1="9.4" x2="0" y2="9.4"/> </g></svg>
+									 
 						</section>
 				</div>
 						

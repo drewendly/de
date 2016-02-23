@@ -62,7 +62,7 @@
 	font-weight: normal;
 	font-style: normal;
 }
-/* background: #f7f6f5; */
+/* background: rgb(246, 247, 247); */
 
 /* hidden fixed navigation */
 
@@ -97,7 +97,7 @@ body {
 	/* zoom: .9; 
 	 -moz-transform: scale(.9); 
 	 -moz-transform-origin: 0 0; */
-  background: #f7f6f5;
+  background: rgb(246, 247, 247);
 }
 
 #Start {
@@ -179,20 +179,27 @@ nav {
     100% {opacity: .6; left:0px; transform: scaleY(1.4) rotate(90deg);}
 }
 
-#fixedbar { 
+#fixedbar  { 
   display: none;
   position: fixed;
   top: 0;
   width: 100%;
   height: 50px;
-  background: rgba(237, 236, 232, 0.8);
+  background: rgba(250, 252, 252, 0.8);
    background-image: url("../svg/DE-Just-Black-15.sv");
   background-position: center center;
   background-size: 40px;
   background-repeat: no-repeat;
-  box-shadow: 6px 0px 7px rgba(0, 0, 0, 0.15), 4px 0px 3px rgba(0, 0, 0, 0.05);
+   box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.1), 0px 0px 1px rgba(0, 0, 0, 0.04);
+  box-shadowORIGINAL: 6px 0px 7px rgba(0, 0, 0, 0.15), 4px 0px 3px rgba(0, 0, 0, 0.05);
+  	   	-webkit-transition: box-shadow 1s ease-in-out;
+	 -moz-transition: box-shadow 1s ease-in-out;
+	 transition: box-shadow 1s ease-in-out; 
 }
+#fixedbar.elevate { 
+  box-shadow: 16px 0px 20px rgba(0, 0, 0, 0.2), 10px 0px 8px rgba(0, 0, 0, 0.1) ;
 
+}
  
 #fixednav { 
   display: block;
@@ -416,19 +423,21 @@ aside li a:hover {
 }
 
 /*.ink styles - the elements which will create the ripple effect. The size and position of these elements will be set by the JS code. Initially these elements will be scaled down to 0% and later animated to large fading circles on user click.*/
+
 .ink {
 	display: block; 
 	position: absolute;
-	background: hsla(0, 0%, 100%, 0.66);
-	border-radius: 50%;
+	border-radius: 55%;
 	transform: scale(0);
-
+	background-color: rgba(0, 179, 255, 1);
 }
 /*animation effect*/
-.ink.animate {animation: ripple 2.333s cubic-bezier(.56,1.86,.61,.71);}
+.ink.animate {animation: ripple 1.0s cubic-bezier(0,.07,0,1);}
 @keyframes ripple {
 	/*scale the element to 250% to safely cover the entire link and fade it out*/
-	100% {opacity: 0; transform: scale(2.5);}
+	0% {background-color: rgba(230, 255, 0, 1); opacity: 0.9533; transform: scale(0);}
+	
+	100% {background-color: rgba(189, 41, 41, 1); opacity: 0; transform: scale(1.0);}
 }
 
 /*\\/\/\   RIPPLE CLICK FX ---End----   \/\/\*/
@@ -487,6 +496,9 @@ aside li a:hover {
   height: 260px;
   width: 170px;
   box-shadow: -3px 19px 17px 0px rgba(0, 0, 0, 0.34), -2px 9px 7px 0px rgba(0, 0, 0, 0.24);
+   -webkit-transition: all 500ms ease 0s;
+  -moz-transition: all 500ms ease 0s;
+  transition: all 500ms ease 0s;
 }
 
 aside {
@@ -497,9 +509,9 @@ aside {
   -ms-transform: translate3d(-300%, 0, 0);
   -o-transform: translate3d(-300%, 0, 0);
   transform: translate3d(-300%, 0, 0); */
-  -webkit-transition: all 500ms ease 0s;
-  -moz-transition: all 500ms ease 0s;
-  transition: all 500ms ease 0s;
+  -webkit-transition: all 500ms ease 0.0s;
+  -moz-transition: all 500ms ease 0.0s;
+  transition: all 500ms ease 0.0s;
   height: 0px;
   width: 50px;
   left: 0%;
@@ -618,7 +630,6 @@ color picker{
 
 #FBico:hover {  /* .shareaside does hover swap */
 	position: relative;
-
 	content: url("../svg/facebook-white.svg");
 }
 
@@ -626,10 +637,10 @@ color picker{
 		position: relative;
 	content: url("../svg/twitter-white.svg");
 }
-
-
 /* END Share Menu Aside */
 
+#page-wrapper {
+}
 
 #Home {
 	position: relative ;
@@ -638,6 +649,14 @@ color picker{
 	top: 200px;
 	width: 100%;
 	overflow: visible;
+}
+#homebody {
+	position: relative;
+	margin: 0 auto;
+	max-width: 1200px;
+	width: 100%;
+	background: ;
+	z-index:;
 }
 
 #homebanner {
@@ -1151,7 +1170,7 @@ Diamond link animation */
 	
   position:absolute;
   top: 0px;
- /* background: #f7f6f5; */
+ /* background: rgb(246, 247, 247); */
   width:100%; 
 height: 100vh;
   overflow: hidden;
@@ -1172,23 +1191,6 @@ height: 100vh;
 height: 100vh;
 }
 
-
-#page-wrapper {
-	
-}
-
-#homebody {
-	
-	position: relative;
-	margin: 0 auto;
-	max-width: 1200px;
-	width: 100%;
-	clip-path: rect(30px, 20px, 30px, 4px);
-	background: ;
-	z-index:;
-	
-}
-
 #viewPort {
 	position:relative; 
 	width:102%; 
@@ -1200,7 +1202,8 @@ height: 100vh;
 	background: ;
 }
 
-.box{
+#Bbox svg {   
+	background-color: rgba(245,245,245, 0.0);
     width: 8px;
     height: 8px;
     position: relative;
@@ -1208,22 +1211,67 @@ height: 100vh;
     top: 20px;
     margin: 15.1px;
     float: left;
-    opacity: 0.15;
+    opacity: 0.09;
+    transform: scale(1);
+    animation: CornersIn 2.333s cubic-bezier(1,.09,.38,.99);
 }
+
+
+
+
+@keyframes CornersIn {
+/* TRY Using GSAP to control/delay autoAlpha to preserve GPU resources + Easing + ToggleClass .active */
+	0% {opacity: 0.09; margin:0px; transform: scale(1); padding:15.1px; width: 8px; height: 8px; background-color: rgba(0,0,0, 1.0); -webkit-clip-path: polygon(100% 0, 100% 85%, 100% 85%, 100% 100%, 0 100%, 0% 60%, 0 0);
+clip-path: polygon(100% 0, 100% 85%, 100% 85%, 100% 100%, 0 100%, 0% 60%, 0 0);}
+	
+	75% {-webkit-clip-path: polygon(15% 0, 15% 85%, 100% 85%, 100% 100%, 0 100%, 0% 60%, 0 0);
+clip-path: polygon(15% 0, 15% 85%, 100% 85%, 100% 100%, 0 100%, 0% 60%, 0 0);}
+
+
+	
+	100% {opacity: 0.09; margin: 15.1px; transform: scale(1); width: 8px; height: 8px; padding:0px; background-color: rgba(200,200,200, 0.0); }
+} /*
+#Bbox svg{
+    width: 8px;
+    height: 8px;
+    position: relative;
+    left: -9px;
+    top: 20px;
+    margin: 0;
+    float: left;
+    opacity: 0.12;
+    transform: scale(1);
+    animation: CornersIn 2.333s cubic-bezier(1,.09,.38,.99);
+}
+@keyframes CornersIn {
+
+	0% {opacity: 0.15; margin:15.1px; transform: scale(0);}
+	
+	
+	85% {opacity: 0.03; margin:15.1px; transform: scale(2);}
+	
+	100% {opacity: 0.12; margin: 15.1px; transform: scale(1);}
+}
+*/ 
+
+
+/*
 .box-1{
-    background-image: url('../svg/BoxCorners/Corner-I-10px.svg');
+    margin-top: 15.1px;
+    margin: 15.1px;
 }
 .box-2{
-    background-image: url('../svg/BoxCorners/Corner-IV-10px.svg');
-}
+    margin-top: 15.1px;
+    margin: 15.1px;}
 .box-3{
-    background-image: url('../svg/BoxCorners/Corner-III-10px.svg');
-}
+    margin-top: 15.1px;
+    margin: 15.1px;}
 .box-4{
-    background-image: url('../svg/BoxCorners/Corner-II-10px.svg');
-}
-#Bbox {   
-}
+    margin-top: 15.1px;
+    margin: 15.1px;
+} 
+*/
+
 
 /* Home PARALAX */
 /*
@@ -1282,7 +1330,7 @@ height: 100vh;
 	height: 65px;
 	z-index: 6;
 	top: -160px;
-	background: #f7f6f5;
+	background: rgb(246, 247, 247);
 	background-image: url('../svg/makeart.svg');
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -1300,7 +1348,7 @@ height: 100vh;
 	height: 40px;
 	background-color: lime;
 	z-index: 8;
-	  background-color: #f7f6f5;
+	  background-color: rgb(246, 247, 247);
 }
 .portnav ul li a{
 text-decoration: none;
