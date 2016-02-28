@@ -344,7 +344,7 @@ aside li a {
 	font-size: 8pt;
 	font-family: 'futura_medium', Futura-medium !important;
 	letter-spacing: .8pt;
-	color: rgba(171, 157, 105, 1) !important;
+	color: rgba(72, 123, 255, 1.96) !important; /* —— —ORIGINAL GOLD rgba(171, 157, 105, 1) , ICE-BLUE rgba(24, 128, 255, 1) */
 	-webkit-font-smoothing: antialiased;
 	padding-left: 25px !important;
 		-webkit-transition: all 0.5s ease !important;
@@ -428,17 +428,20 @@ aside li a:hover {
 .ink {
 	display: block; 
 	position: absolute;
-	border-radius: 55%;
+	border-radius: 0%;
 	transform: scale(0);
-	background-color: rgba(0, 179, 255, 1);
+	background-color: ;
 }
 /*animation effect*/
-.ink.animate {animation: ripple 1.0s cubic-bezier(0,.07,0,1);}
+.ink.animate {animation: ripple 1.5s cubic-bezier(0,.05,0.2,1);}
 @keyframes ripple {
 	/*scale the element to 250% to safely cover the entire link and fade it out*/
-	0% {background-color: rgba(230, 255, 0, 1); opacity: 0.9533; transform: scale(0);}
+	0% {background-color: rgba(255, 0, 247, 0.53); opacity: 1.0; transform: scale(0) rotate(5deg); border-radius: 0%;}
 	
-	100% {background-color: rgba(189, 41, 41, 1); opacity: 0; transform: scale(1.0);}
+	33.333% {background-color: rgba(36, 76, 255, 1); }
+	
+	
+	100% {background-color: rgba(78, 0, 255, 1); opacity: 0; transform: scale(1.333)  rotate(160deg); border-radius: 60%;}
 }
 
 /*\\/\/\   RIPPLE CLICK FX ---End----   \/\/\*/
@@ -1201,6 +1204,7 @@ height: 100vh;
 	top:280px;
 	margin: 0 auto;
 	background: ;
+	text-shadow: 0px 0px 11px black;
 }
 
 #Bbox svg {   
@@ -1331,7 +1335,7 @@ clip-path: polygon(15% 0, 15% 85%, 100% 85%, 100% 100%, 0 100%, 0% 60%, 0 0);}
 	height: 65px;
 	z-index: 6;
 	top: -160px;
-	background: rgb(246, 247, 247);
+	background: rgba(246, 247, 247, 0.0) ;
 	background-image: url('../svg/makeart.svg');
 	background-size: contain;
 	background-repeat: no-repeat;
